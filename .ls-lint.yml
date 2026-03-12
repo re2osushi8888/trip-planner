@@ -1,0 +1,28 @@
+ls:
+  .dir: kebab-case
+  .ts: kebab-case
+  .js: kebab-case
+  .json: kebab-case
+  .yaml: kebab-case
+  .yml: kebab-case
+  .md: kebab-case
+
+ignore:
+  - .claude
+  - "**/node_modules"
+  - "**/dist"
+  - .git
+  - "**/.turbo"
+  - pnpm-lock.yaml
+  - package.json
+  - tsconfig.json
+  - turbo.json
+  - oxlint.json
+  - .oxc.json
+  - commitlint.config.js
+  - lefthook.yml
+  - .mise.toml
+  - pnpm-workspace.yaml
+  - .ls-lint.yml
+  - .gitignore
+  - README.md
