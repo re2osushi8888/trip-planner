@@ -53,3 +53,26 @@ When updating versions:
 2. Test thoroughly in development
 3. Document any breaking changes or migration steps
 4. Commit version updates separately from feature changes
+
+## Skills Usage
+
+### Skill Invocation Transparency
+When using the Skill tool, ALWAYS clearly indicate which skill is being invoked.
+
+**Rules:**
+- ✅ Always mention the skill name before or after invoking it (e.g., "Using the `/version-check` skill to validate versions")
+- ✅ Explain briefly what the skill will do or why it's being used
+- ✅ Display the results or outcomes from the skill execution
+- ❌ Never silently invoke a skill without telling the user
+
+**Examples:**
+
+```
+Good ✅:
+"I'll use the `/version-check` skill to verify that all version specifications follow the project guidelines."
+[invokes Skill tool]
+[displays results]
+
+Bad ❌:
+[invokes Skill tool without explanation]
+```
