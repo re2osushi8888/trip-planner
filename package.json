@@ -1,0 +1,28 @@
+{
+  "name": "trip-planner",
+  "version": "1.0.0",
+  "description": "Trip planner application with TypeScript and Hono",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "oxlint .",
+    "format": "oxc format --write .",
+    "format:check": "oxc format .",
+    "type-check": "turbo type-check",
+    "ls-lint": "ls-lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.15.9",
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.3",
+    "@commitlint/config-conventional": "^20.4.3",
+    "@ls-lint/ls-lint": "^2.3.1",
+    "lefthook": "^2.1.4",
+    "oxc": "^1.0.1",
+    "oxlint": "^1.54.0",
+    "turbo": "^2.8.16"
+  }
+}
