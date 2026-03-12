@@ -51,7 +51,7 @@ Update versions following the project's strict versioning policy.
 
 1. **Check current version**
    - Read package.json
-   - Show current version
+   - Show current version and range specifier if present
 
 2. **Find latest version**
    ```bash
@@ -59,9 +59,11 @@ Update versions following the project's strict versioning policy.
    ```
 
 3. **Ask user**: "Update <package-name> from X.Y.Z to A.B.C?"
+   - Ask if they want to keep existing range specifier (^, ~) or use exact version
+   - Recommend keeping range specifier for automatic patch updates
 
 4. **Update package.json**
-   - Replace with exact version (no `^`, `~`, or other range specifiers)
+   - Update version number preserving or modifying range specifier as requested
    - Update in all affected package.json files if monorepo
 
 5. **Install and test**
@@ -73,16 +75,34 @@ Update versions following the project's strict versioning policy.
 
 ## Important Rules
 
-- ✅ Always use exact versions (e.g., `1.2.3`)
-- ❌ Never use `latest`, `^`, `~`, `*`
+### Runtime Tools (.mise.toml)
+- ✅ Always use exact versions (e.g., `25.8.1`)
+- ❌ Never use `latest`, `^`, `~`, `*`, or major-only versions
+
+### Package Dependencies (package.json)
+- ✅ Exact versions (e.g., `1.2.3`) or range specifiers (e.g., `^1.2.3`, `~1.2.3`)
+- ❌ Never use `latest` or wildcard `*` alone
+- ✅ Recommend using `^` for most dependencies (allows patch and minor updates)
+
+### General
 - ✅ Test after updating
 - ✅ Document breaking changes if any
 - ✅ Commit version updates separately from feature changes
 
 ## Commit Message Format
 
+For runtime tools:
 ```
-chore: update <package/runtime> from X.Y.Z to A.B.C
+chore(config): update node from X.Y.Z to A.B.C
+
+[Optional: describe any breaking changes or migration steps needed]
+
+Co-Authored-By: Claude Sonnet 4.5 (1M context) <noreply@anthropic.com>
+```
+
+For packages:
+```
+chore(deps): update <package-name> from ^X.Y.Z to ^A.B.C
 
 [Optional: describe any breaking changes or migration steps needed]
 

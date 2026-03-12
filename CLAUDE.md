@@ -2,20 +2,31 @@
 
 ## Version Management
 
-### Explicit Version Specification
-All dependencies, tools, and runtime versions MUST be explicitly specified with exact version numbers.
+### Runtime Tools Version Specification
+Runtime tool versions in `.mise.toml` MUST be explicitly specified with exact version numbers.
 
-**Rules:**
-- ❌ Never use `latest`, `*`, or range specifiers (e.g., `^`, `~`) for production dependencies
-- ✅ Always specify exact versions (e.g., `1.2.3`)
-- ✅ Pin runtime versions in `.mise.toml` with full semantic versions
-- ✅ Pin package dependencies in `package.json` with exact versions
+**Rules for .mise.toml:**
+- ❌ Never use `latest`, `*`, or range specifiers (e.g., `^`, `~`)
+- ❌ Never use major-only versions (e.g., `25`)
+- ✅ Always specify exact full semantic versions (e.g., `25.8.1`)
 
 **Rationale:**
-- Ensures reproducible builds across all environments
-- Prevents unexpected breaking changes from automatic updates
-- Makes version upgrades explicit and traceable in git history
-- Simplifies debugging by eliminating version-related ambiguity
+- Ensures reproducible development environments across all machines
+- Prevents "works on my machine" issues
+- Makes runtime upgrades explicit and traceable in git history
+- Simplifies debugging by eliminating environment-related ambiguity
+
+**Rules for package.json:**
+- ✅ Exact versions (e.g., `"hono": "4.12.7"`) are allowed
+- ✅ Range specifiers (e.g., `"hono": "^4.12.7"`, `"hono": "~4.12.7"`) are allowed
+- ❌ Never use `latest` keyword
+- ❌ Never use wildcard `*` alone (except `workspace:*` for monorepo)
+
+**Rationale:**
+- Range specifiers allow automatic security patches and minor updates
+- Aligns with standard Node.js/pnpm ecosystem practices
+- Reduces maintenance burden for dependency updates
+- Maintains flexibility while preventing breaking changes
 
 **Examples:**
 
@@ -27,32 +38,47 @@ pnpm = "10.32.1"
 
 # .mise.toml - Bad ❌
 [tools]
-node = "25"
-pnpm = "latest"
+node = "25"        # Missing patch version
+pnpm = "latest"    # Using 'latest' keyword
 ```
 
 ```json
 // package.json - Good ✅
 {
   "dependencies": {
-    "hono": "4.12.7"
+    "hono": "4.12.7",          // Exact version (fine)
+    "@hono/node-server": "^1.15.0"  // Caret range (fine)
+  },
+  "devDependencies": {
+    "typescript": "~5.9.0"     // Tilde range (fine)
   }
 }
 
 // package.json - Bad ❌
 {
   "dependencies": {
-    "hono": "^4.12.7"
+    "hono": "latest",          // 'latest' keyword not allowed
+    "@hono/node-server": "*"   // Wildcard alone not allowed
   }
 }
 ```
 
 ### Version Updates
-When updating versions:
-1. Update to the specific latest version number
-2. Test thoroughly in development
-3. Document any breaking changes or migration steps
-4. Commit version updates separately from feature changes
+
+**For Runtime Tools (.mise.toml):**
+1. Find the latest version with `mise ls-remote <tool>`
+2. Update to the specific exact version number
+3. Run `mise install` to apply changes
+4. Test thoroughly in development
+5. Commit runtime updates separately from feature changes
+
+**For Package Dependencies (package.json):**
+1. Find the latest version with `pnpm view <package> version`
+2. Update version number (preserving or changing range specifier as needed)
+3. Run `pnpm install` to apply changes
+4. Test thoroughly with `pnpm run type-check` and `pnpm run lint`
+5. Document any breaking changes or migration steps
+6. Commit dependency updates separately from feature changes
 
 ## Skills Usage
 
