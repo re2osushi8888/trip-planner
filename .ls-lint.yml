@@ -26,3 +26,4 @@ ignore:
   - .ls-lint.yml
   - .gitignore
   - README.md
+  - CLAUDE.md
