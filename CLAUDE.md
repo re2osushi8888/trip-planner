@@ -76,3 +76,37 @@ Good ✅:
 Bad ❌:
 [invokes Skill tool without explanation]
 ```
+
+## Git Commit Guidelines
+
+### Commit Message Language
+All commit messages MUST be written in English only.
+
+**Rules:**
+- ✅ Write commit messages in English (subject, body, footer)
+- ✅ Use proper English grammar and spelling
+- ✅ Follow the Conventional Commits format (enforced by commitlint)
+- ❌ Never use non-English characters (Japanese, Chinese, etc.)
+- ❌ Never mix languages in commit messages
+
+**Rationale:**
+- Ensures commit history is accessible to international contributors
+- Maintains consistency across the project
+- Facilitates code review and collaboration
+- Enables better integration with automated tools
+
+**Examples:**
+
+```bash
+# Good ✅
+git commit -m "feat: add user authentication"
+git commit -m "fix: resolve database connection timeout"
+git commit -m "docs: update installation guide"
+
+# Bad ❌
+git commit -m "feat: ユーザー認証を追加"
+git commit -m "fix: データベース接続のタイムアウトを解決"
+git commit -m "機能追加: add user feature"  # Mixed language
+```
+
+**Note:** This rule is technically enforced by commitlint's custom rule, which will reject commits with non-ASCII characters.
