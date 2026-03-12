@@ -1,0 +1,22 @@
+{
+  "name": "@trip-planner/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.15.0",
+    "hono": "^4.7.10"
+  },
+  "devDependencies": {
+    "@trip-planner/tsconfig": "workspace:*",
+    "@types/node": "^25.4.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0"
+  }
+}
