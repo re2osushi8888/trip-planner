@@ -110,3 +110,78 @@ git commit -m "機能追加: add user feature"  # Mixed language
 ```
 
 **Note:** This rule is technically enforced by commitlint's custom rule, which will reject commits with non-ASCII characters.
+
+### Commit Message Scopes
+
+Scopes provide context about which part of the codebase is affected by a change. Follow the Conventional Commits format: `<type>(<scope>): <subject>`
+
+**Rules:**
+- ✅ Use predefined scopes from the approved list below
+- ✅ Use kebab-case for multi-word scopes
+- ✅ Keep scopes concise (1-2 words)
+- ✅ Scope is optional but recommended for clarity
+- ❌ Do not create arbitrary scopes without team discussion
+
+**Available Scopes:**
+
+**Application Layers:**
+- `api` - API related changes
+- `web` - Web frontend changes
+- `mobile` - Mobile app changes
+
+**Features:**
+- `auth` - Authentication and authorization
+- `trip` - Trip planning features
+- `booking` - Booking and reservation features
+- `search` - Search functionality
+- `user` - User management
+- `notification` - Notification system
+- `payment` - Payment processing
+
+**Technical & Tools:**
+- `deps` - Dependencies updates
+- `config` - Configuration files
+- `ci` - CI/CD pipeline
+- `docker` - Docker related changes
+- `test` - Testing infrastructure
+- `scripts` - Build and utility scripts
+- `lint` - Linting and formatting
+
+**Documentation:**
+- `docs` - Documentation
+- `readme` - README file
+- `claude` - Claude Code configuration
+
+**Database & Infrastructure:**
+- `db` - Database changes
+- `cache` - Caching system
+- `queue` - Queue system
+
+**Monorepo Packages:**
+- `shared` - Shared/common code
+- `utils` - Utility functions
+
+**Examples:**
+
+```bash
+# Application layers
+feat(api): add trip search endpoint
+fix(web): correct responsive layout
+
+# Features
+feat(auth): implement OAuth2 login
+fix(booking): resolve duplicate reservation issue
+
+# Technical
+chore(deps): update commitlint to 20.4.4
+ci(github-actions): add deployment workflow
+
+# Documentation
+docs(readme): update installation guide
+docs(claude): add scope guidelines
+
+# Multiple scopes (if change affects multiple areas)
+feat(api,auth): add authenticated endpoints
+```
+
+**Note:** Scopes are enforced by commitlint. Use `pnpm commit` for interactive scope selection.
