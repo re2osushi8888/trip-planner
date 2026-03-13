@@ -25,5 +25,5 @@ ignore:
   - pnpm-workspace.yaml
   - .ls-lint.yml
   - .gitignore
-  - README.md
+  - "**/README.md"
   - CLAUDE.md
