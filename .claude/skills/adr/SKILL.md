@@ -115,6 +115,34 @@ Update `docs/adr/README.md` to include the new ADR in the index table:
 
 Insert in numerical order.
 
+### 6.5. Validate ADR Invariants
+
+Before finalizing, verify the following invariants are maintained:
+
+**Sequential Numbering:**
+- Confirm the new ADR number is exactly `highest_existing_number + 1`
+- Check for no gaps or duplicates in the sequence
+
+**File Naming Convention:**
+- Verify filename follows: `docs/adr/XXXX-kebab-case-title.md`
+- Number is zero-padded to 4 digits
+- Title uses lowercase with hyphens (no spaces, underscores, or special characters)
+
+**Required Sections:**
+- ADR contains all mandatory sections: Context, Decision, Consequences
+- Date is in YYYY-MM-DD format
+- Status is one of: Proposed, Accepted, Rejected, Deprecated, Superseded
+
+**Index Consistency:**
+- New ADR entry is present in `docs/adr/README.md`
+- Entry is in correct numerical order
+- All fields (number, title, status, date) are accurate
+
+**Cross-References (if superseding):**
+- If this ADR supersedes another, both ADRs reference each other
+- Old ADR status is updated to "Superseded"
+- New ADR mentions which ADR it supersedes
+
 ### 7. Confirm with User
 
 Present a summary:

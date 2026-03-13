@@ -11,6 +11,7 @@ ADRs document important architectural decisions made during the project, includi
 | Number | Title | Status | Date |
 |--------|-------|--------|------|
 | [0001](0001-record-architecture-decisions.md) | Record Architecture Decisions | Accepted | 2026-03-12 |
+| [0002](0002-do-not-adopt-adr-tools.md) | Do Not Adopt adr-tools for ADR Management | Accepted | 2026-03-13 |
 
 ## ADR Lifecycle
 
