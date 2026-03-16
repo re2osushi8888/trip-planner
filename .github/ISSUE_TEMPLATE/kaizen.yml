@@ -1,0 +1,73 @@
+name: Kaizen (Improvement)
+description: Create an improvement task
+title: "[Kaizen] "
+labels: ["kaizen", "task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Kaizen Task
+        Please describe the improvement you want to make.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe what improvement needs to be made
+      placeholder: Improve...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Select the affected area (please add corresponding label manually)
+      options:
+        - api
+        - web
+        - domain
+        - config
+        - infra
+        - db
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: current-state
+    attributes:
+      label: Current State
+      description: Describe the current state or problem
+      placeholder: Currently...
+    validations:
+      required: false
+
+  - type: textarea
+    id: desired-state
+    attributes:
+      label: Desired State
+      description: Describe the desired state after improvement
+      placeholder: After improvement...
+    validations:
+      required: false
+
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Implementation Checklist
+      description: Break down the improvement into smaller steps
+      placeholder: |
+        - [ ] Step 1
+        - [ ] Step 2
+        - [ ] Step 3
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any additional context, metrics, or references
+    validations:
+      required: false

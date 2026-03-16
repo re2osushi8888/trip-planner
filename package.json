@@ -34,5 +34,8 @@
     "oxc": "1.0.1",
     "oxlint": "1.54.0",
     "turbo": "2.8.16"
+  },
+  "dependencies": {
+    "codex": "^0.2.3"
   }
 }
