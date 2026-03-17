@@ -1,0 +1,129 @@
+name: Story
+description: Create a Story that combines context (Job Story) and user perspective (User Story)
+title: "[Story] "
+labels: ["story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Story
+        A Story describes a feature from both the user's perspective and the situational context.
+        It combines elements of User Stories (who, what, why) and Job Stories (when, motivation, outcome).
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: Describe from the user's perspective (who, what, why)
+      placeholder: |
+        As a [role/persona],
+        I want [feature/capability],
+        so that [benefit/value].
+
+        Example:
+        As a trip planner,
+        I want to search destinations by budget,
+        so that I can find affordable travel options.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context & Motivation (Job Story)
+      description: Describe the situation and motivation (when, why)
+      placeholder: |
+        When [situation/context],
+        I want to [motivation/need],
+        so I can [expected outcome].
+
+        Example:
+        When I'm planning a trip with a limited budget,
+        I want to quickly filter destinations by price range,
+        so I can avoid wasting time on unaffordable options.
+    validations:
+      required: false
+
+  - type: textarea
+    id: background
+    attributes:
+      label: Background
+      description: Additional context or rationale for this Story
+      placeholder: |
+        - Why is this Story important?
+        - What user pain point does it address?
+        - Any relevant research or feedback?
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Specific, testable criteria that must be met
+      placeholder: |
+        - [ ] Given [context], when [action], then [expected result]
+        - [ ] Feature works on desktop and mobile browsers
+        - [ ] Error handling is implemented for edge cases
+        - [ ] Performance meets requirements (e.g., <200ms)
+        - [ ] Accessible (WCAG 2.1 AA compliant)
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Related Tasks
+      description: List of technical Tasks needed to implement this Story (update as Tasks are created)
+      placeholder: |
+        - [ ] #201 - [Feature] Implement search API endpoint (api)
+        - [ ] #202 - [Feature] Create search UI component (web)
+        - [ ] #203 - [Feature] Add search domain logic (domain)
+        - [ ] #204 - [Feature] Create search indexes (db)
+    validations:
+      required: false
+
+  - type: textarea
+    id: definition-of-done
+    attributes:
+      label: Definition of Done
+      description: Checklist of items that must be completed
+      placeholder: |
+        - [ ] All acceptance criteria are met
+        - [ ] All related Tasks are completed
+        - [ ] Code is reviewed and merged
+        - [ ] Tests are written and passing
+        - [ ] Documentation is updated
+        - [ ] Feature is deployed to production
+        - [ ] Product owner has accepted the Story
+    validations:
+      required: false
+
+  - type: textarea
+    id: epic
+    attributes:
+      label: Parent Epic
+      description: Link to the parent Epic
+      placeholder: "Part of Epic #123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: design-notes
+    attributes:
+      label: Design & Technical Notes
+      description: Design mockups, technical approach, or implementation notes
+      placeholder: |
+        - Design mockup: [link or attach image]
+        - Technical approach: Use library X for Y
+        - API spec: [link]
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any other relevant information
+    validations:
+      required: false

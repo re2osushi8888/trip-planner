@@ -1,0 +1,95 @@
+name: Task - Feature
+description: Create a technical Task for implementing a new feature
+title: "[Feature] "
+labels: ["task", "feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Task
+        A Task represents a specific technical implementation within a Story.
+        Tasks are typically scoped by technical area (api, web, domain, db, config, infra).
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Select the technical area (add corresponding label manually after creating)
+      options:
+        - api
+        - web
+        - domain
+        - config
+        - infra
+        - db
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Task Description
+      description: Describe what needs to be implemented
+      placeholder: |
+        Clearly describe the technical work:
+        - What needs to be built?
+        - Which files/modules will be affected?
+        - What is the expected outcome?
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Technical criteria for this Task to be considered complete
+      placeholder: |
+        - [ ] Implementation follows project conventions
+        - [ ] Unit tests are written and passing
+        - [ ] Code is documented
+        - [ ] No linting errors
+        - [ ] Performance is acceptable
+    validations:
+      required: false
+
+  - type: textarea
+    id: implementation-notes
+    attributes:
+      label: Implementation Notes
+      description: Technical details, approach, or considerations
+      placeholder: |
+        - Use library/pattern X
+        - Follow existing pattern in file Y
+        - Consider edge case Z
+        - Performance optimization needed for large datasets
+    validations:
+      required: false
+
+  - type: textarea
+    id: parent-story
+    attributes:
+      label: Parent Story
+      description: Link to the parent Story
+      placeholder: "Part of Story #123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Other Tasks or issues that must be completed first
+      placeholder: |
+        - Depends on Task #XXX
+        - Blocked by #YYY
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Code snippets, references, or other helpful information
+    validations:
+      required: false

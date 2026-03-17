@@ -1,0 +1,147 @@
+name: Task - Bug
+description: Create a technical Task for fixing a bug
+title: "[Bug] "
+labels: ["task", "bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Bug Fix Task
+        Report and track a bug that needs to be fixed.
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Select the affected technical area (add corresponding label manually after creating)
+      options:
+        - api
+        - web
+        - domain
+        - config
+        - infra
+        - db
+        - other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this bug?
+      options:
+        - Critical (System down, data loss, security issue)
+        - High (Major feature broken, no workaround)
+        - Medium (Feature impaired, workaround exists)
+        - Low (Minor issue, cosmetic)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: Clear description of the bug
+      placeholder: What's going wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the bug
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Environment information
+      placeholder: |
+        - OS: [e.g., Windows 11, macOS 14, Ubuntu 22.04]
+        - Browser: [e.g., Chrome 120, Firefox 121]
+        - Node.js: [e.g., 20.10.0]
+        - Version: [e.g., v1.2.3 or commit SHA]
+      value: |
+        - OS:
+        - Browser:
+        - Node.js:
+        - Version:
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs
+      description: Relevant error messages or logs
+      placeholder: |
+        ```
+        Paste error logs here
+        ```
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Add screenshots if applicable
+    validations:
+      required: false
+
+  - type: textarea
+    id: parent-story
+    attributes:
+      label: Parent Story
+      description: Link to parent Story if applicable
+      placeholder: "Part of Story #123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: fix-approach
+    attributes:
+      label: Fix Approach
+      description: Proposed approach to fix the bug
+      placeholder: |
+        - Root cause analysis
+        - Proposed solution
+        - Areas to investigate
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+    validations:
+      required: false

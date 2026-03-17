@@ -1,0 +1,147 @@
+name: Task - Kaizen
+description: Create a technical Task for improving existing code or processes
+title: "[Kaizen] "
+labels: ["task", "kaizen"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Kaizen (Improvement) Task
+        Propose and track improvements to existing code, architecture, or processes.
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: Select the affected technical area (add corresponding label manually after creating)
+      options:
+        - api
+        - web
+        - domain
+        - config
+        - infra
+        - db
+        - other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Improvement Type
+      description: Type of improvement
+      options:
+        - Performance
+        - Code Quality / Refactoring
+        - Developer Experience
+        - Architecture
+        - Security
+        - Accessibility
+        - Documentation
+        - Testing
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-state
+    attributes:
+      label: Current State
+      description: Describe the current situation
+      placeholder: |
+        What is the current implementation?
+        What problems or inefficiencies exist?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: Proposed Improvement
+      description: Describe the proposed change
+      placeholder: |
+        What should be changed?
+        How will it work after the improvement?
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Expected Benefits
+      description: What benefits will this provide?
+      placeholder: |
+        - Performance improvement (e.g., 50% faster)
+        - Better maintainability
+        - Reduced complexity
+        - Enhanced developer productivity
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-approach
+    attributes:
+      label: Implementation Approach
+      description: How will this be implemented?
+      placeholder: |
+        1. Step 1
+        2. Step 2
+        3. Step 3
+
+        Can this be done incrementally?
+        What testing is needed?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this improvement?
+      options:
+        - High (Significant impact, should do soon)
+        - Medium (Moderate impact, nice to have)
+        - Low (Minor impact, when time permits)
+    validations:
+      required: false
+
+  - type: textarea
+    id: effort-estimate
+    attributes:
+      label: Effort Estimate
+      description: Rough estimate of effort required
+      placeholder: |
+        - Small (< 1 day)
+        - Medium (1-3 days)
+        - Large (> 3 days)
+    validations:
+      required: false
+
+  - type: textarea
+    id: parent-story
+    attributes:
+      label: Parent Story
+      description: Link to parent Story if applicable
+      placeholder: "Part of Story #123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks & Considerations
+      description: Any risks to be aware of?
+      placeholder: |
+        - Potential breaking changes
+        - Backward compatibility concerns
+        - Requires coordination with other teams
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: References, examples, or other context
+    validations:
+      required: false
