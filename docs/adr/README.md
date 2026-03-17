@@ -19,6 +19,7 @@ ADRs document important architectural decisions made during the project, includi
 | [0007](0007-adopt-oxlint-and-oxfmt-for-linting-and-formatting.md) | Adopt oxlint and oxfmt for Linting and Formatting | Accepted | 2026-03-13 |
 | [0008](0008-adopt-mise-for-development-tool-version-management.md) | Adopt mise for Development Tool Version Management | Accepted | 2026-03-13 |
 | [0009](0009-adopt-aikido-safe-chain-for-supply-chain-protection.md) | Adopt Aikido Safe Chain for Supply Chain Protection | Accepted | 2026-03-13 |
+| [0010](0010-adopt-epic-story-task-hierarchy-for-issue-management.md) | Adopt Epic-Story-Task Hierarchy for Issue Management | Accepted | 2026-03-17 |
 
 ## ADR Lifecycle
 
