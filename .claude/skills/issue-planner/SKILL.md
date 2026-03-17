@@ -147,6 +147,26 @@ For creating multiple Epics or Stories at once, use the provided shell scripts.
    ./scripts/create-stories.sh my-stories.json
    ```
 
+### Creating Multiple Tasks
+
+1. **Prepare data file** (JSON format):
+   ```bash
+   # Create your JSON file with Task data
+   # See .github/ISSUE_TEMPLATE/3-task-*.yml for field definitions
+   vim my-tasks.json
+   ```
+
+2. **Run script**:
+   ```bash
+   ./scripts/create-tasks.sh my-tasks.json
+   ```
+
+3. **Add scope labels** (manually):
+   ```bash
+   # Script will output these commands for you
+   gh issue edit <issue-number> --add-label <scope>
+   ```
+
 **Example JSON structure**:
 ```json
 {
@@ -164,12 +184,34 @@ For creating multiple Epics or Stories at once, use the provided shell scripts.
 }
 ```
 
+**Task JSON structure**:
+```json
+{
+  "tasks": [
+    {
+      "type": "feature | bug | kaizen",
+      "title": "[Feature|Bug|Kaizen] Task Title",
+      "scope": "api | web | domain | db | config | infra",
+      "description": "Task description",
+      "acceptance_criteria": "- [ ] Criteria 1",
+      "parent_story": "#123",
+      "notes": "Implementation notes"
+    }
+  ]
+}
+```
+
 ### Benefits
 
 - ⚡ **Fast**: Create 5-20 issues in seconds instead of minutes
 - ✅ **Consistent**: All issues follow the same format
 - 📝 **Reviewable**: Data file can be reviewed before creation
 - 🔄 **Reusable**: Save data files for similar projects
+
+### Important Notes
+
+- **Tasks**: After creating Tasks with `create-tasks.sh`, you must manually add scope labels (`api`, `web`, `domain`, `db`, `config`, `infra`). The script will output the exact commands needed.
+- **Field definitions**: Always refer to `.github/ISSUE_TEMPLATE/*.yml` files for authoritative field descriptions and examples.
 
 ---
 

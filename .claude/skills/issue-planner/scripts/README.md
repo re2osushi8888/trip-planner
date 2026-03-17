@@ -6,6 +6,7 @@ Shell scripts for creating multiple GitHub Issues (Epics and Stories) at once.
 
 - `create-epics.sh` - Bulk create Epic issues from JSON data
 - `create-stories.sh` - Bulk create Story issues from JSON data
+- `create-tasks.sh` - Bulk create Task issues from JSON data
 - `set-project-status.sh` - Set GitHub Project status for issues
 
 ## Prerequisites
@@ -58,11 +59,38 @@ gh auth login
    - Output issue numbers for reference
    - Add a small delay between creations to avoid rate limiting
 
+### Creating Tasks
+
+1. Create a JSON data file with your Task data (see [JSON Data Format](#json-data-format) below):
+   ```bash
+   # Create your data file
+   vim my-tasks.json
+   ```
+
+2. Run the script:
+   ```bash
+   ./create-tasks.sh my-tasks.json
+   ```
+
+3. The script will:
+   - Create each Task as a GitHub Issue
+   - Apply `task` and type labels (`feature`, `bug`, or `kaizen`) automatically
+   - Output issue numbers for reference
+   - **Display commands to add scope labels** (must be done manually)
+   - Add a small delay between creations to avoid rate limiting
+
+4. **IMPORTANT**: Manually add scope labels after creation:
+   ```bash
+   # The script will output these commands for you
+   gh issue edit <issue-number> --add-label <scope>
+   ```
+
 ## JSON Data Format
 
 **Field definitions**: Refer to the issue templates for detailed field descriptions:
 - Epic fields: [`.github/ISSUE_TEMPLATE/1-epic.yml`](../../../.github/ISSUE_TEMPLATE/1-epic.yml)
 - Story fields: [`.github/ISSUE_TEMPLATE/2-story.yml`](../../../.github/ISSUE_TEMPLATE/2-story.yml)
+- Task fields: [`.github/ISSUE_TEMPLATE/3-task-*.yml`](../../../.github/ISSUE_TEMPLATE/)
 
 ### Epic Data Structure
 
@@ -106,6 +134,29 @@ gh auth login
 ```
 
 **Note:** Field meanings and examples are defined in the Story issue template. The JSON structure maps directly to the template fields.
+
+### Task Data Structure
+
+```json
+{
+  "tasks": [
+    {
+      "type": "feature | bug | kaizen",
+      "title": "[Feature|Bug|Kaizen] Specific technical task",
+      "scope": "api | web | domain | db | config | infra",
+      "description": "Detailed description of the task",
+      "acceptance_criteria": "Checklist of completion criteria",
+      "parent_story": "#123 (optional)",
+      "notes": "Technical implementation notes (optional)"
+    }
+  ]
+}
+```
+
+**Note:**
+- Field meanings are defined in the Task issue templates (3-task-feature.yml, 3-task-bug.yml, 3-task-kaizen.yml)
+- The `type` field determines which template structure is used
+- The `scope` label must be added manually after creation (script will provide commands)
 
 ## Tips
 
@@ -165,6 +216,16 @@ Set the GitHub Project status for issues:
 
 # 5. Set Stories to appropriate status
 ./set-project-status.sh Todo 55 56 57 58
+
+# 6. Create Tasks for a Story
+./create-tasks.sh my-tasks.json
+# Output: Created #59, #60, #61, #62...
+
+# 7. Add scope labels to Tasks (commands provided by script)
+gh issue edit 59 --add-label api
+gh issue edit 60 --add-label web
+gh issue edit 61 --add-label domain
+gh issue edit 62 --add-label db
 ```
 
 ## Troubleshooting
