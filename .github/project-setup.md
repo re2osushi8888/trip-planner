@@ -36,6 +36,7 @@ Click "New label" for each entry and configure as follows:
 
 | Label Name | Color | Description |
 |------------|-------|-------------|
+| `userIdea` | `#ededed` | Quick ideas and suggestions (no strict format) |
 | `epic` | `#7057ff` | Large features or initiatives spanning multiple Stories |
 | `story` | `#0075ca` | User-facing features combining Job Story and User Story formats |
 | `task` | `#008672` | Technical implementation work |
@@ -64,13 +65,14 @@ For each label:
 ### Verification
 
 After creating all labels, verify:
-- ✅ All 13 labels exist
-- ✅ Hierarchy labels: `epic`, `story`, `task`
+- ✅ All 14 labels exist
+- ✅ Hierarchy labels: `userIdea`, `epic`, `story`, `task`
 - ✅ Task type labels: `feature`, `bug`, `kaizen`
 - ✅ Scope labels: `api`, `web`, `domain`, `db`, `config`, `infra`
 
 ### Color Scheme Rationale
 
+- **Light gray** (`#ededed`): User Idea - Unstructured, early-stage thoughts
 - **Purple** (`#7057ff`): Epic - Highest level, strategic
 - **Blue** (`#0075ca`): Story - User-focused, medium level
 - **Teal** (`#008672`): Task - Implementation, ground level
@@ -82,6 +84,31 @@ After creating all labels, verify:
 ---
 
 ## Recommended Views for Epic-Story-Task Hierarchy
+
+### 0. User Idea Board (Optional)
+
+**Purpose**: Capture quick ideas and suggestions without strict formatting
+
+**Setup Steps**:
+1. Open the project: https://github.com/users/re2osushi8888/projects/2
+2. Click "**+ New view**" button
+3. Enter view name: `User Idea Board`
+4. Select layout: **Board**
+5. Click "**Create**"
+6. Configure the view:
+   - Click "**...**" menu → "**Filter**"
+   - Add filter: `label:userIdea`
+   - Save
+
+**Status Columns** (recommended):
+- Ideas
+- Reviewing
+- Accepted (→ will be converted to Epic/Story)
+- Rejected
+
+**Note**: User Ideas are unstructured thoughts. When an idea matures, create a proper Epic or Story from it and close the User Idea issue.
+
+---
 
 ### 1. Epic Board
 
@@ -210,6 +237,7 @@ Track tasks by type across all scopes.
 The project uses a hierarchical label system based on Epic → Story → Task structure.
 
 ### Hierarchy Labels (automatically set by issue templates)
+- `userIdea` - Quick ideas and suggestions (no strict format)
 - `epic` - Large features or initiatives spanning multiple Stories
 - `story` - User-facing features combining Job Story and User Story formats
 - `task` - Technical implementation work
@@ -230,6 +258,7 @@ The project uses a hierarchical label system based on Epic → Story → Task st
 ### Label Combinations
 
 Examples of how labels combine:
+- User Idea: `userIdea`
 - Epic: `epic`
 - Story: `story`
 - Feature Task: `task`, `feature`, `api` (or other scope)
@@ -250,10 +279,18 @@ Examples of how labels combine:
 - Pin frequently used views for quick access
 
 ### Workflow Best Practices
+- **User Idea Board**: Collect and review unstructured ideas before formalizing them
 - **Epic Board**: Track overall progress of major features
 - **Story Board**: Manage user-facing capabilities ready for sprint planning
 - **Task Board**: Monitor day-to-day technical implementation
 - **Scope Boards**: Enable parallel development across technical areas (api, web, domain, etc.)
+
+### Idea to Implementation Flow
+1. **Capture**: Create User Idea issue (quick, unstructured)
+2. **Review**: Discuss and evaluate in User Idea Board
+3. **Formalize**: If accepted, create Epic or Story from the idea
+4. **Close**: Close the original User Idea issue (link to the Epic/Story)
+5. **Implement**: Follow normal Epic → Story → Task workflow
 
 ### Hierarchy Navigation
 - Use issue linking to connect Epic → Story → Task

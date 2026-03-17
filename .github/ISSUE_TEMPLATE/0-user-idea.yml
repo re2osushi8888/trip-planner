@@ -1,0 +1,39 @@
+name: User Idea
+description: Quick idea or suggestion (no strict format required)
+title: "[Idea] "
+labels: ["userIdea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## User Idea
+        A place to capture quick ideas, suggestions, or thoughts without strict formatting.
+
+        Just write down your idea - we'll organize it later if needed!
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your Idea
+      description: What's your idea? (Keep it simple - no need for detailed format)
+      placeholder: |
+        Write your idea here...
+
+        Examples:
+        - "What if we could...?"
+        - "It would be cool to have..."
+        - "Users might want..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context (Optional)
+      description: Any extra details, links, or references?
+      placeholder: |
+        - Why this idea?
+        - Links to similar features
+        - Quick sketches or mockups
+    validations:
+      required: false
