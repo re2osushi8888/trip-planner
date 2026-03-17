@@ -1,0 +1,13 @@
+{
+  "stories": [
+    {
+      "title": "[Story] Example Story Title",
+      "user_story": "As a [role/persona],\nI want [feature/capability],\nso that [benefit/value].",
+      "context": "When [situation/context],\nI want to [motivation/need],\nso I can [expected outcome].",
+      "background": "- Why is this Story important?\n- What user pain point does it address?\n- Any relevant research or feedback?",
+      "acceptance_criteria": "- [ ] Given [context], when [action], then [expected result]\n- [ ] Feature works on desktop and mobile browsers\n- [ ] Error handling is implemented for edge cases\n- [ ] Performance meets requirements (e.g., <200ms)",
+      "parent_epic": "#123",
+      "notes": "- Design mockup: [link]\n- Technical approach: Use library X for Y\n- API spec: [link]"
+    }
+  ]
+}

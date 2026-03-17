@@ -90,6 +90,87 @@ See [Template Reference](references/template-reference.md#task-templates) for de
 
 ---
 
+## Bulk Creation Scripts
+
+For creating multiple Epics or Stories at once, use the provided shell scripts.
+
+### Prerequisites
+
+- `jq` installed: `sudo apt-get install jq`
+- `gh` (GitHub CLI) installed and authenticated
+
+### Creating Multiple Epics
+
+1. **Prepare data file** (JSON format):
+   ```bash
+   cp scripts/example-epics.json my-epics.json
+   # Edit my-epics.json with your Epic data
+   ```
+
+2. **Run script**:
+   ```bash
+   ./scripts/create-epics.sh my-epics.json
+   ```
+
+**Example JSON structure**:
+```json
+{
+  "epics": [
+    {
+      "title": "[Epic] Example Epic Title",
+      "overview": "Brief overview...",
+      "scope": {
+        "in": "- Feature A\n- Feature B",
+        "out": "- Feature X (separate Epic)"
+      },
+      "acceptance_criteria": "- [ ] Criteria 1\n- [ ] Criteria 2",
+      "priority": "High",
+      "dependencies": "None",
+      "notes": "Additional notes"
+    }
+  ]
+}
+```
+
+### Creating Multiple Stories
+
+1. **Prepare data file** (JSON format):
+   ```bash
+   cp scripts/example-stories.json my-stories.json
+   # Edit my-stories.json with your Story data
+   ```
+
+2. **Run script**:
+   ```bash
+   ./scripts/create-stories.sh my-stories.json
+   ```
+
+**Example JSON structure**:
+```json
+{
+  "stories": [
+    {
+      "title": "[Story] Example Story Title",
+      "user_story": "As a...\nI want...\nso that...",
+      "context": "When...\nI want to...\nso I can...",
+      "background": "Why important...",
+      "acceptance_criteria": "- [ ] Criteria 1",
+      "parent_epic": "#123",
+      "notes": "Technical notes"
+    }
+  ]
+}
+```
+
+### Benefits
+
+- ⚡ **Fast**: Create 5-20 issues in seconds instead of minutes
+- ✅ **Consistent**: All issues follow the same format
+- 📝 **Reviewable**: Data file can be reviewed before creation
+- 🔄 **Reusable**: Save data files for similar projects
+
+---
+
 ## References
 
 For detailed information, see:
