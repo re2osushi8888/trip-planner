@@ -18,6 +18,69 @@ The following views already exist:
 - Roadmap (Roadmap)
 - My items (Table)
 
+## Label Setup (Prerequisites)
+
+**IMPORTANT**: Create all required labels in the repository BEFORE setting up project views. Views depend on these labels for filtering.
+
+### Creating Labels in Repository
+
+1. Navigate to repository labels page:
+   - URL: https://github.com/re2osushi8888/trip-planner/labels
+   - Or: Repository → Issues → Labels tab
+
+2. Create labels using the table below
+
+### Required Labels
+
+Click "New label" for each entry and configure as follows:
+
+| Label Name | Color | Description |
+|------------|-------|-------------|
+| `epic` | `#7057ff` | Large features or initiatives spanning multiple Stories |
+| `story` | `#0075ca` | User-facing features combining Job Story and User Story formats |
+| `task` | `#008672` | Technical implementation work |
+| `feature` | `#a2eeef` | New feature implementation tasks |
+| `bug` | `#d73a4a` | Bug fix tasks |
+| `kaizen` | `#fbca04` | Improvement tasks (continuous improvement) |
+| `api` | `#c5def5` | API endpoints and backend logic |
+| `web` | `#c5def5` | Frontend UI and user interface |
+| `domain` | `#c5def5` | Domain logic and business rules |
+| `db` | `#c5def5` | Database schema and migrations |
+| `config` | `#c5def5` | Configuration and environment setup |
+| `infra` | `#c5def5` | Infrastructure, deployment, and CI/CD |
+
+### Label Creation Steps
+
+For each label:
+
+1. Click **"New label"** button
+2. Enter **Name** (e.g., `epic`)
+3. Enter **Description** (copy from table above)
+4. Enter **Color** hex code (e.g., `#7057ff`)
+   - Or click color picker to choose
+5. Click **"Create label"**
+6. Repeat for all labels
+
+### Verification
+
+After creating all labels, verify:
+- ✅ All 13 labels exist
+- ✅ Hierarchy labels: `epic`, `story`, `task`
+- ✅ Task type labels: `feature`, `bug`, `kaizen`
+- ✅ Scope labels: `api`, `web`, `domain`, `db`, `config`, `infra`
+
+### Color Scheme Rationale
+
+- **Purple** (`#7057ff`): Epic - Highest level, strategic
+- **Blue** (`#0075ca`): Story - User-focused, medium level
+- **Teal** (`#008672`): Task - Implementation, ground level
+- **Light blue** (`#a2eeef`): Feature - New capabilities
+- **Red** (`#d73a4a`): Bug - Issues requiring fixes
+- **Yellow** (`#fbca04`): Kaizen - Improvements
+- **Light gray-blue** (`#c5def5`): Scope labels - Technical categorization
+
+---
+
 ## Recommended Views for Epic-Story-Task Hierarchy
 
 ### 1. Epic Board
