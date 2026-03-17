@@ -18,11 +18,11 @@ The following views already exist:
 - Roadmap (Roadmap)
 - My items (Table)
 
-## Recommended Additional Views
+## Recommended Views for Epic-Story-Task Hierarchy
 
 ### 1. Epic Board
 
-**Purpose**: Track large features and user stories
+**Purpose**: Track large features and initiatives
 
 **Setup Steps**:
 1. Open the project: https://github.com/users/re2osushi8888/projects/2
@@ -42,9 +42,31 @@ The following views already exist:
 
 ---
 
-### 2. Task Board
+### 2. Story Board
 
-**Purpose**: Track individual tasks (Features, Bugs, Kaizen)
+**Purpose**: Track user-facing features and capabilities
+
+**Setup Steps**:
+1. Click "+ New view" button
+2. Enter view name: `Story Board`
+3. Select layout: **Board**
+4. Click "Create"
+5. Configure the view:
+   - Click "..." menu → "Filter"
+   - Add filter: `label:story`
+   - Save
+
+**Status Columns** (recommended):
+- Todo
+- In Progress
+- Review
+- Done
+
+---
+
+### 3. Task Board
+
+**Purpose**: Track technical implementation tasks (Feature, Bug, Kaizen)
 
 **Setup Steps**:
 1. Click "+ New view" button
@@ -64,35 +86,43 @@ The following views already exist:
 
 ---
 
-### 3. Feature Board (Optional)
+### 4. Scope-Specific Boards (Optional)
 
-**Purpose**: Track only feature tasks
+Create separate boards for each technical scope to track implementation by area.
 
-**Setup Steps**:
-1. Click "+ New view" button
-2. Enter view name: `Feature Board`
-3. Select layout: **Board**
-4. Click "Create"
-5. Configure the view:
-   - Click "..." menu → "Filter"
-   - Add filter: `label:feature`
-   - Save
+#### API Board
+- Filter: `label:task label:api`
+- Track all API-related tasks
+
+#### Web Board
+- Filter: `label:task label:web`
+- Track all Web UI tasks
+
+#### Domain Board
+- Filter: `label:task label:domain`
+- Track all Domain logic tasks
+
+#### Database Board
+- Filter: `label:task label:db`
+- Track all Database tasks
 
 ---
 
-### 4. Bug Board (Optional)
+### 5. Task Type Boards (Optional)
 
-**Purpose**: Track only bug fix tasks
+Track tasks by type across all scopes.
 
-**Setup Steps**:
-1. Click "+ New view" button
-2. Enter view name: `Bug Board`
-3. Select layout: **Board**
-4. Click "Create"
-5. Configure the view:
-   - Click "..." menu → "Filter"
-   - Add filter: `label:bug`
-   - Save
+#### Feature Board
+- Filter: `label:feature`
+- Track all feature implementation tasks
+
+#### Bug Board
+- Filter: `label:bug`
+- Track all bug fix tasks
+
+#### Kaizen Board
+- Filter: `label:kaizen`
+- Track all improvement tasks
 
 ---
 
@@ -114,31 +144,58 @@ The following views already exist:
 
 ## Label System
 
-The project uses the following label system:
+The project uses a hierarchical label system based on Epic → Story → Task structure.
 
-### Type Labels (automatically set by issue templates)
-- `epic` - Large features or user stories
-- `feature` - New feature implementation
-- `bug` - Bug fixes
-- `kaizen` - Improvements
-- `task` - Generic task label
+### Hierarchy Labels (automatically set by issue templates)
+- `epic` - Large features or initiatives spanning multiple Stories
+- `story` - User-facing features combining Job Story and User Story formats
+- `task` - Technical implementation work
 
-### Scope Labels (manually added)
-- `api` - API layer
-- `web` - Web frontend
-- `domain` - Domain logic
-- `config` - Configuration
-- `infra` - Infrastructure
-- `db` - Database
+### Task Type Labels (automatically set by task templates)
+- `feature` - New feature implementation tasks
+- `bug` - Bug fix tasks
+- `kaizen` - Improvement tasks
+
+### Scope Labels (manually added to Tasks)
+- `api` - API endpoints and backend logic
+- `web` - Frontend UI and user interface
+- `domain` - Domain logic and business rules
+- `db` - Database schema and migrations
+- `config` - Configuration and environment setup
+- `infra` - Infrastructure, deployment, and CI/CD
+
+### Label Combinations
+
+Examples of how labels combine:
+- Epic: `epic`
+- Story: `story`
+- Feature Task: `task`, `feature`, `api` (or other scope)
+- Bug Task: `task`, `bug`, `web` (or other scope)
+- Kaizen Task: `task`, `kaizen`, `domain` (or other scope)
 
 ---
 
 ## Tips
 
-- Use **Filters** to create focused views by combining labels (e.g., `label:feature label:api`)
-- Use **Group by** to organize items by Status, Assignee, or Labels
+### View Management
+- Use **Filters** to create focused views by combining labels:
+  - `label:task label:api` - All API tasks
+  - `label:feature label:web` - All Web feature tasks
+  - `label:story` - All Stories
+- Use **Group by** to organize items by Status, Assignee, Labels, or Iteration
 - Use **Sort by** to prioritize items by Priority, Updated date, etc.
 - Pin frequently used views for quick access
+
+### Workflow Best Practices
+- **Epic Board**: Track overall progress of major features
+- **Story Board**: Manage user-facing capabilities ready for sprint planning
+- **Task Board**: Monitor day-to-day technical implementation
+- **Scope Boards**: Enable parallel development across technical areas (api, web, domain, etc.)
+
+### Hierarchy Navigation
+- Use issue linking to connect Epic → Story → Task
+- Reference parent issues in descriptions: "Part of Epic #123", "Part of Story #456"
+- GitHub Projects automatically shows relationships through linked issues
 
 ---
 
