@@ -4,6 +4,7 @@ Shell scripts for creating multiple GitHub Issues (Epics and Stories) at once.
 
 ## Scripts
 
+- `create-labels.sh` - Create all required GitHub labels
 - `create-epics.sh` - Bulk create Epic issues from JSON data
 - `create-stories.sh` - Bulk create Story issues from JSON data
 - `create-tasks.sh` - Bulk create Task issues from JSON data
@@ -20,6 +21,29 @@ gh auth login
 ```
 
 ## Usage
+
+### Creating Labels (One-time setup)
+
+Create all required GitHub labels for the project:
+
+```bash
+./create-labels.sh
+```
+
+**Options:**
+- `--force`: Update existing labels with new colors/descriptions
+
+**What it does:**
+- Creates 14 labels: userIdea, epic, story, task, feature, bug, kaizen, api, web, domain, db, config, infra
+- Sets appropriate colors and descriptions
+- Skips labels that already exist (unless `--force` is used)
+
+**When to run:**
+- Initial project setup
+- After cloning the repository
+- When label definitions change
+
+---
 
 ### Creating Epics
 
@@ -200,6 +224,9 @@ Set the GitHub Project status for issues:
 ## Example Workflow
 
 ```bash
+# 0. First-time setup: Create labels
+./create-labels.sh
+
 # 1. Create Epics from data file
 ./create-epics.sh my-epics.json
 # Output: Created #50, #51, #52, #53, #54

@@ -99,6 +99,19 @@ For creating multiple Epics or Stories at once, use the provided shell scripts.
 - `jq` installed: `sudo apt-get install jq`
 - `gh` (GitHub CLI) installed and authenticated
 
+### First-Time Setup: Create Labels
+
+Before creating issues, set up all required GitHub labels:
+
+```bash
+cd .claude/skills/issue-planner/scripts
+./create-labels.sh
+```
+
+This creates 14 labels: userIdea, epic, story, task, feature, bug, kaizen, and all scope labels (api, web, domain, db, config, infra).
+
+Use `--force` to update existing labels if definitions change.
+
 ### Creating Multiple Epics
 
 1. **Prepare data file** (JSON format):

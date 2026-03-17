@@ -36,7 +36,7 @@ Click "New label" for each entry and configure as follows:
 
 | Label Name | Color | Description |
 |------------|-------|-------------|
-| `userIdea` | `#ededed` | Quick ideas and suggestions (no strict format) |
+| `userIdea` | `#fbca04` | Quick ideas and suggestions (no strict format) |
 | `epic` | `#7057ff` | Large features or initiatives spanning multiple Stories |
 | `story` | `#0075ca` | User-facing features combining Job Story and User Story formats |
 | `task` | `#008672` | Technical implementation work |
@@ -72,7 +72,7 @@ After creating all labels, verify:
 
 ### Color Scheme Rationale
 
-- **Light gray** (`#ededed`): User Idea - Unstructured, early-stage thoughts
+- **Yellow** (`#fbca04`): User Idea - Unstructured, early-stage thoughts
 - **Purple** (`#7057ff`): Epic - Highest level, strategic
 - **Blue** (`#0075ca`): Story - User-focused, medium level
 - **Teal** (`#008672`): Task - Implementation, ground level
