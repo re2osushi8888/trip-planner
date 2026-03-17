@@ -7,8 +7,6 @@ Shell scripts for creating multiple GitHub Issues (Epics and Stories) at once.
 - `create-epics.sh` - Bulk create Epic issues from JSON data
 - `create-stories.sh` - Bulk create Story issues from JSON data
 - `set-project-status.sh` - Set GitHub Project status for issues
-- `example-epics.json` - Example Epic data file template
-- `example-stories.json` - Example Story data file template
 
 ## Prerequisites
 
@@ -24,10 +22,10 @@ gh auth login
 
 ### Creating Epics
 
-1. Copy the example file and edit with your data:
+1. Create a JSON data file with your Epic data (see [JSON Data Format](#json-data-format) below):
    ```bash
-   cp example-epics.json my-epics.json
-   # Edit my-epics.json
+   # Create your data file
+   vim my-epics.json
    ```
 
 2. Run the script:
@@ -43,10 +41,10 @@ gh auth login
 
 ### Creating Stories
 
-1. Copy the example file and edit with your data:
+1. Create a JSON data file with your Story data (see [JSON Data Format](#json-data-format) below):
    ```bash
-   cp example-stories.json my-stories.json
-   # Edit my-stories.json
+   # Create your data file
+   vim my-stories.json
    ```
 
 2. Run the script:
@@ -61,6 +59,10 @@ gh auth login
    - Add a small delay between creations to avoid rate limiting
 
 ## JSON Data Format
+
+**Field definitions**: Refer to the issue templates for detailed field descriptions:
+- Epic fields: [`.github/ISSUE_TEMPLATE/1-epic.yml`](../../../.github/ISSUE_TEMPLATE/1-epic.yml)
+- Story fields: [`.github/ISSUE_TEMPLATE/2-story.yml`](../../../.github/ISSUE_TEMPLATE/2-story.yml)
 
 ### Epic Data Structure
 
@@ -83,6 +85,8 @@ gh auth login
 }
 ```
 
+**Note:** Field meanings and examples are defined in the Epic issue template. The JSON structure maps directly to the template fields.
+
 ### Story Data Structure
 
 ```json
@@ -100,6 +104,8 @@ gh auth login
   ]
 }
 ```
+
+**Note:** Field meanings and examples are defined in the Story issue template. The JSON structure maps directly to the template fields.
 
 ## Tips
 

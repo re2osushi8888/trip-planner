@@ -103,8 +103,9 @@ For creating multiple Epics or Stories at once, use the provided shell scripts.
 
 1. **Prepare data file** (JSON format):
    ```bash
-   cp scripts/example-epics.json my-epics.json
-   # Edit my-epics.json with your Epic data
+   # Create your JSON file with Epic data
+   # See .github/ISSUE_TEMPLATE/1-epic.yml for field definitions
+   vim my-epics.json
    ```
 
 2. **Run script**:
@@ -136,8 +137,9 @@ For creating multiple Epics or Stories at once, use the provided shell scripts.
 
 1. **Prepare data file** (JSON format):
    ```bash
-   cp scripts/example-stories.json my-stories.json
-   # Edit my-stories.json with your Story data
+   # Create your JSON file with Story data
+   # See .github/ISSUE_TEMPLATE/2-story.yml for field definitions
+   vim my-stories.json
    ```
 
 2. **Run script**:
