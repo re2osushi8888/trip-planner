@@ -102,6 +102,13 @@ $notes"
   issue_numbers+=("$issue_number")
 
   echo "  ✓ Created #$issue_number: $issue_url"
+
+  # Add relationship comment if parent_epic is specified
+  if [ -n "$parent_epic" ]; then
+    gh issue comment "$issue_number" --body "Part of Epic $parent_epic" >/dev/null 2>&1
+    echo "  ✓ Added relationship to $parent_epic"
+  fi
+
   echo ""
 
   # Small delay to avoid rate limiting

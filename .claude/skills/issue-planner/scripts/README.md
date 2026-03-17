@@ -6,9 +6,10 @@ Shell scripts for creating multiple GitHub Issues (Epics and Stories) at once.
 
 - `create-labels.sh` - Create all required GitHub labels
 - `create-epics.sh` - Bulk create Epic issues from JSON data
-- `create-stories.sh` - Bulk create Story issues from JSON data
-- `create-tasks.sh` - Bulk create Task issues from JSON data
+- `create-stories.sh` - Bulk create Story issues from JSON data (with auto-relationship)
+- `create-tasks.sh` - Bulk create Task issues from JSON data (with auto-relationship)
 - `set-project-status.sh` - Set GitHub Project status for issues
+- `add-relationships.sh` - Add parent-child relationships to existing issues
 
 ## Prerequisites
 
@@ -80,6 +81,7 @@ Create all required GitHub labels for the project:
 3. The script will:
    - Create each Story as a GitHub Issue
    - Apply the `story` label automatically
+   - **Automatically add relationship comment** if `parent_epic` is specified in JSON
    - Output issue numbers for reference
    - Add a small delay between creations to avoid rate limiting
 
@@ -99,6 +101,7 @@ Create all required GitHub labels for the project:
 3. The script will:
    - Create each Task as a GitHub Issue
    - Apply `task` and type labels (`feature`, `bug`, or `kaizen`) automatically
+   - **Automatically add relationship comment** if `parent_story` is specified in JSON
    - Output issue numbers for reference
    - **Display commands to add scope labels** (must be done manually)
    - Add a small delay between creations to avoid rate limiting

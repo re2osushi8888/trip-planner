@@ -223,6 +223,7 @@ Use `--force` to update existing labels if definitions change.
 
 ### Important Notes
 
+- **Relationships**: Scripts automatically add parent-child relationships when `parent_epic` (Stories) or `parent_story` (Tasks) is specified in JSON data. GitHub will show these in the issue sidebar.
 - **Tasks**: After creating Tasks with `create-tasks.sh`, you must manually add scope labels (`api`, `web`, `domain`, `db`, `config`, `infra`). The script will output the exact commands needed.
 - **Field definitions**: Always refer to `.github/ISSUE_TEMPLATE/*.yml` files for authoritative field descriptions and examples.
 

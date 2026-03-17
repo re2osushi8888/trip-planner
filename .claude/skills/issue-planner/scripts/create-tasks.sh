@@ -106,6 +106,13 @@ $notes"
   scope_labels+=("$issue_number:$scope")
 
   echo "  ✓ Created #$issue_number: $issue_url"
+
+  # Add relationship comment if parent_story is specified
+  if [ -n "$parent_story" ]; then
+    gh issue comment "$issue_number" --body "Part of Story $parent_story" >/dev/null 2>&1
+    echo "  ✓ Added relationship to $parent_story"
+  fi
+
   echo ""
 
   # Small delay to avoid rate limiting
