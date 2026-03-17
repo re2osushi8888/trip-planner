@@ -1,6 +1,6 @@
 ---
-name: create-issue
-description: Guide for creating GitHub Issues (Epic, Story, Task) from user requirements
+name: issue-planner
+description: Plan and structure GitHub Issues by breaking down user requirements into Epic → Story → Task hierarchy. Use when user wants to create issues, plan features, organize work into epics/stories/tasks, or needs help structuring their backlog. Handles breakdown of large features into manageable pieces with proper scope classification (api, web, domain, db, config, infra).
 invocable: true
 ---
 
