@@ -17,10 +17,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      codex:
-        specifier: ^0.2.3
-        version: 0.2.3
     devDependencies:
       '@commitlint/cli':
         specifier: 20.4.4
@@ -34,6 +30,9 @@ importers:
       '@ls-lint/ls-lint':
         specifier: 2.3.1
         version: 2.3.1
+      codex:
+        specifier: ^0.2.3
+        version: 0.2.3
       commitizen:
         specifier: 4.3.1
         version: 4.3.1(@types/node@25.4.0)(typescript@5.9.3)
