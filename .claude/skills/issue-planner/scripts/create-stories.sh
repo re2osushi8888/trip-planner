@@ -4,6 +4,41 @@
 
 set -euo pipefail
 
+# Function to get issue internal ID
+get_issue_id() {
+  local issue_number=$1
+  gh issue view "$issue_number" --json id --jq ".id"
+}
+
+# Function to add sub-issue relationship via GraphQL API
+add_sub_issue() {
+  local parent_number=$1
+  local child_number=$2
+
+  local parent_id=$(get_issue_id "$parent_number")
+  local child_id=$(get_issue_id "$child_number")
+
+  gh api graphql \
+    -H "GraphQL-Features: sub_issues" \
+    -f query='
+      mutation($parentId: ID!, $childId: ID!) {
+        addSubIssue(input: { issueId: $parentId, subIssueId: $childId }) {
+          issue {
+            number
+            title
+          }
+          subIssue {
+            number
+            title
+          }
+        }
+      }
+    ' \
+    -f parentId="$parent_id" \
+    -f childId="$child_id" \
+    > /dev/null 2>&1
+}
+
 if [ $# -lt 1 ]; then
   echo "Usage: $0 <stories-data.json>"
   echo "Example: $0 stories.json"
@@ -103,10 +138,17 @@ $notes"
 
   echo "  ✓ Created #$issue_number: $issue_url"
 
-  # Add relationship comment if parent_epic is specified
+  # Add sub-issue relationship if parent_epic is specified
   if [ -n "$parent_epic" ]; then
-    gh issue comment "$issue_number" --body "Part of Epic $parent_epic" >/dev/null 2>&1
-    echo "  ✓ Added relationship to $parent_epic"
+    # Extract issue number (remove '#' if present)
+    parent_num=$(echo "$parent_epic" | sed 's/^#//')
+
+    echo -n "  Setting as sub-issue of Epic #$parent_num... "
+    if add_sub_issue "$parent_num" "$issue_number"; then
+      echo "✓"
+    else
+      echo "⚠ (warning: may already exist or error occurred)"
+    fi
   fi
 
   echo ""
