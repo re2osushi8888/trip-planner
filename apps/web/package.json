@@ -7,11 +7,10 @@
     "dev": "vp dev",
     "build": "tsc -b && vp build",
     "check": "vp check",
-    "check:fix": "vp check --fix",
-    "format": "vp fmt",
-    "format:check": "vp fmt --check",
-    "type-check": "tsc --noEmit",
+    "fix": "vp check --fix",
     "lint": "eslint .",
+    "format": "vp fmt",
+    "type-check": "tsc --noEmit",
     "preview": "vp preview"
   },
   "dependencies": {

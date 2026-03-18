@@ -4,7 +4,7 @@ pre-commit:
     lint:
       run: pnpm lint
     format:
-      run: pnpm format:check
+      run: vp fmt --check
     ls-lint:
       run: pnpm ls-lint
     type-check:

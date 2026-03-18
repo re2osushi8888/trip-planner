@@ -9,11 +9,12 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm -r --parallel run dev",
-    "check": "pnpm -r run check",
-    "lint": "pnpm -r run lint",
-    "format": "pnpm -r run format",
-    "format:check": "pnpm -r run format:check",
-    "type-check": "pnpm -r run type-check",
+    "build": "vp run -r build",
+    "check": "vp run -r check",
+    "fix": "vp run -r fix",
+    "lint": "vp run -r lint",
+    "format": "vp run -r format",
+    "type-check": "vp run -r type-check",
     "ls-lint": "ls-lint",
     "commit": "git-cz"
   },
