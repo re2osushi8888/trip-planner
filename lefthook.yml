@@ -1,14 +1,46 @@
 pre-commit:
   parallel: true
   commands:
-    check-fix:
-      run: vp check --fix
+    # Type checking - must run on entire project for consistency
+    type-check:
+      glob: '*.{ts,tsx}'
+      run: pnpm type-check
+      fail_text: 'Type checking failed. Fix type errors before committing.'
+
+    # File naming conventions - validates all staged files
     ls-lint:
       run: pnpm ls-lint
-    type-check:
-      run: pnpm type-check
+      fail_text: 'File naming violations found. Check ls-lint rules.'
+
+    # Formatting and linting with auto-fix - processes staged files only
+    check-fix:
+      glob: '*.{ts,tsx,js,jsx,json,md,yml,yaml}'
+      run: vp check --fix
+      stage_fixed: true
+      fail_text: 'Code quality issues found. Review the output above.'
 
 commit-msg:
   commands:
+    # Validate commit message format
     commitlint:
       run: pnpm commitlint --edit {1}
+      fail_text: "Commit message doesn't follow Conventional Commits format."
+
+# Optional: pre-push hook for additional checks before pushing
+# Uncomment to enable
+# pre-push:
+#   commands:
+#     # Run tests before pushing
+#     test:
+#       run: pnpm test
+#       fail_text: "Tests failed. Fix failing tests before pushing."
+#
+#     # Check for console.log statements
+#     check-console:
+#       glob: "*.{ts,tsx,js,jsx}"
+#       run: |
+#         if git diff origin/main...HEAD -- {push_files} | grep -E "console\.(log|debug|info|warn)"; then
+#           echo "Found console statements in diff. Remove before pushing."
+#           exit 1
+#         fi
+#       fail_text: "Console statements found in changes."
