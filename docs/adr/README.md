@@ -26,7 +26,7 @@ ADRs document important architectural decisions made during the project, includi
 | [0014](0014-use-lefthook-for-git-hooks-instead-of-vite-plus.md)      | Use Lefthook for Git Hooks Management Instead of Vite+         | Accepted                | 2026-03-18 |
 | [0015](0015-use-pnpm-for-root-dev-command-instead-of-vite-plus.md)   | Use pnpm for Root Dev Command Instead of Vite+                 | Accepted                | 2026-03-18 |
 | [0016](0016-adopt-vitest-for-testing.md)                             | Adopt Vitest for Unit and Integration Testing                  | Accepted                | 2026-03-18 |
-| [0017](0017-adopt-hono-for-backend-framework.md)                      | Adopt Hono for Backend Framework                                | Accepted                | 2026-03-18 |
+| [0017](0017-adopt-hono-for-backend-framework.md)                     | Adopt Hono for Backend Framework                               | Accepted                | 2026-03-18 |
 
 ## ADR Lifecycle
 
