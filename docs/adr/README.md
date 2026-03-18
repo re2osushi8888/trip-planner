@@ -25,6 +25,7 @@ ADRs document important architectural decisions made during the project, includi
 | [0013](0013-adopt-react-spa-with-vite-plus.md)                       | Adopt React SPA with Vite+                                     | Accepted                | 2026-03-18 |
 | [0014](0014-use-lefthook-for-git-hooks-instead-of-vite-plus.md)      | Use Lefthook for Git Hooks Management Instead of Vite+         | Accepted                | 2026-03-18 |
 | [0015](0015-use-pnpm-for-root-dev-command-instead-of-vite-plus.md)   | Use pnpm for Root Dev Command Instead of Vite+                 | Accepted                | 2026-03-18 |
+| [0016](0016-adopt-vitest-for-testing.md)                              | Adopt Vitest for Unit and Integration Testing                  | Accepted                | 2026-03-18 |
 
 ## ADR Lifecycle
 
