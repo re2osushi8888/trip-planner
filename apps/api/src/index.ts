@@ -1,11 +1,11 @@
-import { serve } from "@hono/node-server";
-import { Hono } from "hono";
+import { serve } from '@hono/node-server';
+import { Hono } from 'hono';
 
 const app = new Hono();
 
-app.get("/", (c) => {
-  console.log("hello!");
-  return c.text("Hello World");
+app.get('/', (c) => {
+  console.log('hello!');
+  return c.text('Hello World');
 });
 
 const port = 3000;

@@ -1,7 +1,7 @@
 name: Task - Kaizen
 description: Create a technical Task for improving existing code or processes
-title: "[Kaizen] "
-labels: ["task", "kaizen"]
+title: '[Kaizen] '
+labels: ['task', 'kaizen']
 body:
   - type: markdown
     attributes:
@@ -122,7 +122,7 @@ body:
     attributes:
       label: Parent Story
       description: Link to parent Story if applicable
-      placeholder: "Part of Story #123"
+      placeholder: 'Part of Story #123'
     validations:
       required: false
 

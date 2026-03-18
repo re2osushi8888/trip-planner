@@ -49,10 +49,10 @@ pre-commit:
       run: pnpm ls-lint
     type-check:
       run: pnpm type-check
-      glob: "*.{ts,tsx}"
+      glob: '*.{ts,tsx}'
     lint:
       run: pnpm eslint {staged_files}
-      glob: "*.{js,ts,jsx,tsx}"
+      glob: '*.{js,ts,jsx,tsx}'
 
 pre-push:
   commands:

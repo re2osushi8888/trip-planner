@@ -1,7 +1,7 @@
 name: Task - Feature
 description: Create a technical Task for implementing a new feature
-title: "[Feature] "
-labels: ["task", "feature"]
+title: '[Feature] '
+labels: ['task', 'feature']
 body:
   - type: markdown
     attributes:
@@ -71,7 +71,7 @@ body:
     attributes:
       label: Parent Story
       description: Link to the parent Story
-      placeholder: "Part of Story #123"
+      placeholder: 'Part of Story #123'
     validations:
       required: false
 

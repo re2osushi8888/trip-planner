@@ -1,9 +1,9 @@
-import { defineConfig } from "vite-plus";
+import { defineConfig } from 'vite-plus';
 
 export default defineConfig({
   lint: {
-    ignorePatterns: ["dist/**"],
+    ignorePatterns: ['dist/**'],
     options: { typeAware: true, typeCheck: true },
   },
-  fmt: { options: { singleQuote: true } },
+  fmt: { singleQuote: true },
 });
