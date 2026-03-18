@@ -10,6 +10,7 @@ Vite+ (v0.1.13-alpha) provides a unified task runner through `vp run` that can e
 The `dev` command differs from other commands in a critical way: it starts long-running processes (development servers) that need to run concurrently and remain active throughout the development session. When we attempted to use `vp run -r dev`:
 
 **Problem observed:**
+
 - Only the first application's dev server starts (apps/api)
 - The second application (apps/web) never starts
 - Both development servers need to run simultaneously for full-stack development
