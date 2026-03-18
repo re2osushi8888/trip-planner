@@ -15,6 +15,7 @@
     "lint": "vp run -r lint",
     "format": "vp run -r format",
     "type-check": "vp run -r type-check",
+    "test": "vp run -r test",
     "ls-lint": "ls-lint",
     "commit": "git-cz"
   },
