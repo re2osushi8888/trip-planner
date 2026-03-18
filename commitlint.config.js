@@ -7,6 +7,7 @@ export default {
           const { header } = parsed;
 
           // Detect non-ASCII characters (Japanese, Chinese, etc.)
+          // eslint-disable-next-line no-control-regex
           const nonEnglishRegex = /[^\x00-\x7F]/;
 
           if (header && nonEnglishRegex.test(header)) {

@@ -6,10 +6,6 @@
   "scripts": {
     "dev": "vp dev",
     "build": "tsc -b && vp build",
-    "check": "vp check",
-    "fix": "vp check --fix",
-    "lint": "eslint .",
-    "format": "vp fmt",
     "type-check": "tsc --noEmit",
     "preview": "vp preview"
   },

@@ -7,10 +7,6 @@
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
     "build": "tsgo",
-    "check": "vp check",
-    "fix": "vp check --fix",
-    "lint": "vp lint",
-    "format": "vp format",
     "type-check": "tsgo --noEmit"
   },
   "dependencies": {
