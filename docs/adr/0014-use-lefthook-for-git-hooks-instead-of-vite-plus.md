@@ -14,6 +14,7 @@ Vite+ is a unified toolchain that includes built-in git hooks functionality thro
 3. **Customization Limitations**: Vite+ hooks are designed for standard workflows and lack the flexibility needed for project-specific requirements. Lefthook provides more granular control over hook execution, including parallel execution, glob patterns, and conditional execution.
 
 We already have Lefthook successfully configured (ADR-0006) with:
+
 - Pre-commit hooks for linting, formatting, type checking, and file naming
 - Commit-msg hooks for commitlint validation
 - Parallel execution for faster hook runs
@@ -23,6 +24,7 @@ We already have Lefthook successfully configured (ADR-0006) with:
 We will continue using **Lefthook** for all git hooks management and will not adopt Vite+ hooks functionality.
 
 Our git hooks workflow:
+
 - Pre-commit: `vp check --fix` (via Lefthook), `ls-lint`, `type-check`
 - Commit-msg: `commitlint`
 
