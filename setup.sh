@@ -108,6 +108,35 @@ install_mise_tools() {
     mise list
 }
 
+# Install Vite+
+install_vite_plus() {
+    print_header "Setting up Vite+"
+
+    # Check if vp command exists
+    if command_exists vp; then
+        print_success "Vite+ is already installed ($(vp --version | head -n 1))"
+        return 0
+    fi
+
+    print_info "Installing Vite+ (unified toolchain)..."
+
+    local os=$(detect_os)
+
+    if [ "$os" = "windows" ]; then
+        print_warning "Windows detected. Please install Vite+ manually:"
+        echo "    irm https://vite.plus/ps1 | iex"
+        print_info "Skipping Vite+ installation..."
+        return 0
+    fi
+
+    # Install Vite+ using official installer
+    curl -fsSL https://vite.plus | bash
+
+    print_success "Vite+ installed successfully"
+    print_warning "Please restart your terminal or run: source ~/.zshrc (or ~/.bashrc)"
+    print_info "After restart, run 'vp --version' to verify the installation"
+}
+
 # Install Aikido Safe Chain
 install_safe_chain() {
     print_header "Setting up Aikido Safe Chain"
@@ -184,6 +213,7 @@ main() {
     print_info "This script will set up your development environment with:"
     echo "  • mise (development tool version manager)"
     echo "  • Node.js and pnpm (from .mise.toml)"
+    echo "  • Vite+ (unified toolchain for linting, formatting, testing)"
     echo "  • Aikido Safe Chain (supply chain protection)"
     echo "  • Project dependencies"
     echo "  • Git hooks (lefthook)"
@@ -201,13 +231,16 @@ main() {
     # Step 2: Install mise tools (Node.js, pnpm, etc.)
     install_mise_tools
 
-    # Step 3: Install Aikido Safe Chain
+    # Step 3: Install Vite+
+    install_vite_plus
+
+    # Step 4: Install Aikido Safe Chain
     install_safe_chain
 
-    # Step 4: Install project dependencies
+    # Step 5: Install project dependencies
     install_dependencies
 
-    # Step 5: Setup git hooks
+    # Step 6: Setup git hooks
     setup_git_hooks
 
     # Final message
@@ -218,13 +251,15 @@ main() {
     print_info "Next steps:"
     echo "  1. Restart your terminal (or run: source ~/.zshrc or source ~/.bashrc)"
     echo "  2. Verify Safe Chain: npm safe-chain-verify"
-    echo "  3. Start developing: pnpm dev"
+    echo "  3. Verify Vite+: vp --version"
+    echo "  4. Start developing: pnpm dev"
     echo ""
     print_info "Useful commands:"
+    echo "  • vp check          - Run format + lint + type-check (unified)"
+    echo "  • vp lint           - Run linter"
+    echo "  • vp fmt            - Format code"
     echo "  • pnpm dev          - Start development server"
     echo "  • pnpm build        - Build the project"
-    echo "  • pnpm lint         - Run linter"
-    echo "  • pnpm type-check   - Check TypeScript types"
     echo "  • pnpm commit       - Interactive commit with commitlint"
     echo "  • mise list         - Show installed tool versions"
     echo ""

@@ -33,6 +33,7 @@ Use template: `1-epic.yml` → Label: `epic`
 **Title format**: `[Epic] <Brief description>`
 
 **Key fields**:
+
 - **Overview**: High-level description of the Epic
 - **Scope In**: What's included in this Epic
 - **Scope Out**: What's explicitly NOT included
@@ -50,10 +51,12 @@ Use template: `2-story.yml` → Label: `story`
 **Title format**: `[Story] <Feature description>`
 
 **Hybrid format** (combine both):
+
 - **User Story**: "As a [role], I want [feature], so that [benefit]"
 - **Job Story**: "When [situation], I want to [motivation], so I can [outcome]"
 
 **Key fields**:
+
 - **User Story**: Role-based perspective
 - **Context (Job Story)**: Situation-based perspective
 - **Background**: Why this Story is important
@@ -87,6 +90,7 @@ When ready to start implementing a specific Story, break it down into Tasks.
 **When**: About to start development on a specific Story
 
 **Split by Scope**: Identify which technical scopes are needed:
+
 - `api` - API endpoints and business logic exposure
 - `web` - Frontend UI components
 - `domain` - Core business logic
@@ -95,6 +99,7 @@ When ready to start implementing a specific Story, break it down into Tasks.
 - `infra` - Infrastructure and deployment
 
 **Task Types** (choose appropriate template):
+
 - `3-task-feature.yml` → Labels: `task`, `feature`
 - `3-task-bug.yml` → Labels: `task`, `bug`
 - `3-task-kaizen.yml` → Labels: `task`, `kaizen`
@@ -102,6 +107,7 @@ When ready to start implementing a specific Story, break it down into Tasks.
 **Title format**: `[Feature|Bug|Kaizen] <Specific technical task>`
 
 **Key fields**:
+
 - **Scope**: REQUIRED - One of: api, web, domain, db, config, infra
 - **Description**: Technical implementation details
 - **Acceptance Criteria**: Testable conditions for Task completion
@@ -112,12 +118,14 @@ See [Template Reference](template-reference.md#task-templates) for detailed fiel
 ### Step 3: Set Up Labels
 
 **Automatic labels** (set by templates):
+
 - `epic` for Epic template
 - `story` for Story template
 - `task` for all Task templates
 - `feature`, `bug`, `kaizen` for Task type
 
 **Manual labels** (YOU MUST ADD):
+
 - Scope labels: `api`, `web`, `domain`, `db`, `config`, `infra`
 
 ⚠️ **Important**: After creating each Task, manually add the appropriate scope label:
@@ -136,6 +144,7 @@ gh issue edit <issue-number> --add-label <scope>
 Work on Tasks in the recommended implementation order (see below).
 
 Update Task/Story/Epic status as you progress:
+
 - Task: `Todo` → `In Progress` → `Done`
 - Story: Completed when all Tasks are done
 - Epic: Completed when all Stories are done
@@ -194,6 +203,7 @@ These labels are automatically applied when you create an issue using the corres
 After creating each Task, you **must manually add** the appropriate scope label:
 
 **Scope labels**:
+
 - `api` - API endpoints and controllers
 - `web` - Frontend UI components
 - `domain` - Core business logic
@@ -251,10 +261,12 @@ Part of Story #456
 ### Parent-Child Relationships
 
 When using bulk creation scripts (see [Bulk Creation Guide](bulk-creation-guide.md)), relationships are automatically set up when you specify:
+
 - `parent_epic` field in Story JSON data
 - `parent_story` field in Task JSON data
 
 GitHub will display these relationships in:
+
 - Issue sidebar (under "Development")
 - Issue timeline
 - GitHub Projects (as hierarchical views)

@@ -20,6 +20,7 @@ The project needed a fast, modern solution that maintains compatibility with the
 We will adopt **oxlint** for linting and **oxfmt** (part of OXC project) for code formatting.
 
 **Implementation:**
+
 - Use `oxlint` (v1.54.0+) for linting TypeScript and JavaScript files
 - Use `oxc format` (v1.0.1+) for code formatting
 - Configure via npm scripts in package.json:
@@ -62,6 +63,7 @@ We will adopt **oxlint** for linting and **oxfmt** (part of OXC project) for cod
 ## Consequences
 
 **Positive:**
+
 - **Dramatic performance improvement**: Linting and formatting complete in milliseconds instead of seconds, enabling near-instant feedback
 - **Better developer experience**: Fast pre-commit hooks reduce friction and encourage frequent commits
 - **CI/CD efficiency**: Shorter pipeline execution times reduce cloud costs and accelerate deployment cycles
@@ -71,6 +73,7 @@ We will adopt **oxlint** for linting and **oxfmt** (part of OXC project) for cod
 - **Active development**: Regular updates and improvements from the OXC team
 
 **Negative:**
+
 - **Tool immaturity**: oxlint/oxfmt are not yet fully mature compared to ESLint/Prettier
   - Some ESLint rules may not be implemented yet
   - ESLint plugin support is not yet available (planned for future releases)
@@ -82,6 +85,7 @@ We will adopt **oxlint** for linting and **oxfmt** (part of OXC project) for cod
 - **Learning curve**: Team members familiar with ESLint configuration need to learn oxlint conventions
 
 **Neutral:**
+
 - **Maturity trade-off accepted**: We consciously accept the immaturity risk with expectations for rapid improvement based on:
   - Strong technical foundation (Rust-based architecture)
   - Active development and community momentum
@@ -92,6 +96,7 @@ We will adopt **oxlint** for linting and **oxfmt** (part of OXC project) for cod
 - **Community adoption**: As a newer tool, ecosystem maturity will develop over time
 
 **Mitigation strategies for immaturity concerns:**
+
 - Monitor oxlint release notes and changelogs for new features and breaking changes
 - Maintain awareness of ESLint plugin support progress
 - Document any missing rules or workarounds needed

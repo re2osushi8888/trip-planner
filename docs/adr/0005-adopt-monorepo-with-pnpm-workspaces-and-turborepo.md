@@ -28,6 +28,7 @@ The project needed a repository strategy that enables code sharing while maintai
 We will adopt a **monorepo architecture** using **pnpm workspaces** for package management and **Turborepo** for build orchestration.
 
 **Architecture:**
+
 ```
 trip-planner/
 ├── apps/
@@ -77,6 +78,7 @@ trip-planner/
 ## Consequences
 
 **Positive:**
+
 - Code sharing is simple via workspace packages (e.g., `@trip-planner/types`)
 - Atomic commits across multiple packages ensure consistency
 - Single source of truth for dependencies and tooling configuration
@@ -88,6 +90,7 @@ trip-planner/
 - Developer onboarding is simpler with unified tooling
 
 **Negative:**
+
 - Initial setup complexity compared to single-package repository
 - Larger git repository size as project grows
 - Need to manage interdependencies carefully to avoid circular references
@@ -96,6 +99,7 @@ trip-planner/
 - Risk of tight coupling between packages if not carefully architected
 
 **Neutral:**
+
 - Team must learn workspace protocol syntax (`workspace:*`)
 - Build times scale with project size, though Turborepo caching mitigates this
 - Monorepo structure is visible in import paths (e.g., `@trip-planner/utils`)
