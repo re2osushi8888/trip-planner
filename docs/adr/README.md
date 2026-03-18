@@ -23,6 +23,7 @@ ADRs document important architectural decisions made during the project, includi
 | [0011](0011-adopt-skill-creator-plugin-for-skill-development.md)     | Adopt skill-creator Plugin for Skill Development               | Accepted                | 2026-03-17 |
 | [0012](0012-adopt-vite-plus-for-unified-toolchain.md)                | Adopt Vite+ for Unified Toolchain                              | Accepted (Experimental) | 2026-03-18 |
 | [0013](0013-adopt-react-spa-with-vite-plus.md)                       | Adopt React SPA with Vite+                                     | Accepted                | 2026-03-18 |
+| [0014](0014-use-lefthook-for-git-hooks-instead-of-vite-plus.md)      | Use Lefthook for Git Hooks Management Instead of Vite+        | Accepted                | 2026-03-18 |
 
 ## ADR Lifecycle
 
