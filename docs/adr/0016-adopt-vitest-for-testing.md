@@ -10,6 +10,7 @@ The project requires a testing framework for unit and integration tests. Followi
 Vitest is bundled with Vite+ and provides native integration with the development environment. Additionally, test execution performance is a priority for maintaining fast feedback loops during development.
 
 Key considerations:
+
 - Vite+ already includes Vitest as part of its unified toolchain
 - Need for fast test execution to support rapid development cycles
 - Desire for consistent tooling across the development workflow
@@ -24,6 +25,7 @@ Vitest will be accessed through the Vite+ wrapper command `vp test` rather than 
 **Alternatives considered:**
 
 Given the adoption of Vite+ (ADR-0012), no alternatives were formally evaluated. The decision to use Vitest naturally follows from the Vite+ adoption, as Vitest is:
+
 - Pre-bundled with Vite+
 - Designed to work seamlessly with Vite's build system
 - Already available without additional installation
