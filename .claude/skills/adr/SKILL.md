@@ -15,6 +15,7 @@ Follow these steps to create an ADR interactively:
 ### 1. Identify the Decision
 
 Review the recent conversation to identify:
+
 - The architectural question or problem
 - The proposed solution or choice
 - Any alternatives that were discussed
@@ -26,21 +27,25 @@ If unclear, ask the user to clarify what decision should be documented.
 Collect the following through conversation:
 
 **Decision Title:**
+
 - Keep it concise (5-10 words)
 - Use present tense ("Use PostgreSQL for primary database")
 - Avoid implementation details
 
 **Context:**
+
 - What problem or need motivated this decision?
 - What constraints or requirements exist?
 - What is the current situation?
 
 **Decision:**
+
 - What specific choice was made?
 - Why this option over alternatives?
 - What alternatives were considered?
 
 **Consequences:**
+
 - Positive outcomes (benefits, improvements)
 - Negative outcomes (trade-offs, limitations)
 - Neutral outcomes (other impacts)
@@ -72,24 +77,29 @@ Status: {Proposed|Accepted}
 {Describe the chosen solution and why it was selected over alternatives}
 
 **Alternatives considered:**
+
 - **Option 1**: Why rejected
 - **Option 2**: Why rejected
 
 ## Consequences
 
 **Positive:**
+
 - {Benefit 1}
 - {Benefit 2}
 
 **Negative:**
+
 - {Trade-off 1}
 - {Drawback 1}
 
 **Neutral:**
+
 - {Other impact 1}
 ```
 
 **Guidelines:**
+
 - Use clear, professional language
 - Write in present tense
 - Be specific and concrete
@@ -99,6 +109,7 @@ Status: {Proposed|Accepted}
 ### 5. Create the File
 
 Write the ADR to:
+
 - Filename: `docs/adr/{number}-{kebab-case-title}.md`
 - Number: Zero-padded to 4 digits (e.g., 0001, 0042, 0123)
 - Title: Lowercase with hyphens replacing spaces
@@ -120,25 +131,30 @@ Insert in numerical order.
 Before finalizing, verify the following invariants are maintained:
 
 **Sequential Numbering:**
+
 - Confirm the new ADR number is exactly `highest_existing_number + 1`
 - Check for no gaps or duplicates in the sequence
 
 **File Naming Convention:**
+
 - Verify filename follows: `docs/adr/XXXX-kebab-case-title.md`
 - Number is zero-padded to 4 digits
 - Title uses lowercase with hyphens (no spaces, underscores, or special characters)
 
 **Required Sections:**
+
 - ADR contains all mandatory sections: Context, Decision, Consequences
 - Date is in YYYY-MM-DD format
 - Status is one of: Proposed, Accepted, Rejected, Deprecated, Superseded
 
 **Index Consistency:**
+
 - New ADR entry is present in `docs/adr/README.md`
 - Entry is in correct numerical order
 - All fields (number, title, status, date) are accurate
 
 **Cross-References (if superseding):**
+
 - If this ADR supersedes another, both ADRs reference each other
 - Old ADR status is updated to "Superseded"
 - New ADR mentions which ADR it supersedes
@@ -146,6 +162,7 @@ Before finalizing, verify the following invariants are maintained:
 ### 7. Confirm with User
 
 Present a summary:
+
 - ADR number and title
 - File location
 - Key points from each section

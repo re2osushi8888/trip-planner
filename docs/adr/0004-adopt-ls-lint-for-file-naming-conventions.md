@@ -14,6 +14,7 @@ Consistent file naming conventions are critical for maintainability and team col
 - **Onboarding friction**: New contributors struggle to understand which convention to use
 
 In a monorepo with multiple packages and teams, these issues compound. The project needed automated enforcement of file naming standards that:
+
 - Runs fast enough for pre-commit hooks
 - Supports multiple file types
 - Allows for necessary exceptions (package.json, README.md, etc.)
@@ -24,6 +25,7 @@ In a monorepo with multiple packages and teams, these issues compound. The proje
 We will adopt **ls-lint** to enforce kebab-case naming conventions across the codebase.
 
 **Implementation:**
+
 - Use `@ls-lint/ls-lint` v2.3.1
 - Enforce kebab-case for all file types and directories:
   - `.ts`, `.js` - TypeScript and JavaScript files
@@ -38,6 +40,7 @@ We will adopt **ls-lint** to enforce kebab-case naming conventions across the co
   - Tool configurations: `.gitignore`, `commitlint.config.js`, etc.
 
 **Rationale for kebab-case:**
+
 - Most URL-friendly (no encoding needed)
 - Commonly used in web development and modern JavaScript projects
 - Clear word separation without uppercase complexity
@@ -59,6 +62,7 @@ We will adopt **ls-lint** to enforce kebab-case naming conventions across the co
 ## Consequences
 
 **Positive:**
+
 - Consistent file naming across the entire codebase
 - Automated enforcement prevents new violations at commit time
 - Predictable file locations improve navigation and discoverability
@@ -69,6 +73,7 @@ We will adopt **ls-lint** to enforce kebab-case naming conventions across the co
 - Case-sensitivity issues are avoided (important for cross-platform development)
 
 **Negative:**
+
 - Existing files with non-kebab-case names must be renamed (one-time migration cost)
 - Contributors need to learn and remember kebab-case convention
 - Some standard files (README.md, package.json) require exceptions
@@ -76,6 +81,7 @@ We will adopt **ls-lint** to enforce kebab-case naming conventions across the co
 - Pre-commit hook can block commits if files violate naming rules
 
 **Neutral:**
+
 - Kebab-case is subjective; teams could choose other conventions
 - The ignore list documents which files are exceptions to the rule
 - File renames may briefly disrupt git history, but `git log --follow` mitigates this

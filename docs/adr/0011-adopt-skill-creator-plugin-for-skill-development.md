@@ -12,6 +12,7 @@ Prior to this decision, skills for Claude Code were being created ad-hoc without
 - **Context bloat**: Skills were being created through conversational prompts, which consumed significant context window space and made the development process inefficient
 
 As the project grew and more custom skills were needed, these issues became increasingly problematic. A more systematic approach to skill development was needed to:
+
 - Ensure skills follow best practices
 - Reduce context consumption during skill creation
 - Improve skill quality and maintainability
@@ -22,6 +23,7 @@ As the project grew and more custom skills were needed, these issues became incr
 We will adopt the `skill-creator` plugin for Claude Code by installing it via the `/plugin` command.
 
 The `skill-creator` plugin provides:
+
 - Guided skill creation following best practices
 - Built-in templates and patterns for common skill types
 - Validation and optimization of skill prompts
@@ -37,6 +39,7 @@ The `skill-creator` plugin provides:
 ## Consequences
 
 **Positive:**
+
 - Skills will be created following established best practices and patterns
 - Significant reduction in context window consumption during skill development
 - Improved skill quality through validation and optimization features
@@ -45,10 +48,12 @@ The `skill-creator` plugin provides:
 - Access to performance evaluation tools for skill optimization
 
 **Negative:**
+
 - Additional dependency on the skill-creator plugin
 - Learning curve for team members to understand the plugin's capabilities
 - Potential overhead for very simple skills where manual creation might be faster
 
 **Neutral:**
+
 - Existing skills may need to be refactored to align with best practices discovered through the plugin
 - The skill development workflow changes from conversational prompts to plugin-guided creation

@@ -21,11 +21,13 @@ Update versions following the project's strict versioning policy.
 ### For Runtime Updates (mise)
 
 1. **Check current versions**
+
    ```bash
    mise ls | grep -E "(node|pnpm)"
    ```
 
 2. **Find latest versions**
+
    ```bash
    mise ls-remote node | tail -5
    mise ls-remote pnpm | tail -5
@@ -38,6 +40,7 @@ Update versions following the project's strict versioning policy.
    - Format: `node = "X.Y.Z"`, `pnpm = "A.B.C"`
 
 5. **Install new versions**
+
    ```bash
    mise install
    ```
@@ -54,6 +57,7 @@ Update versions following the project's strict versioning policy.
    - Show current version and range specifier if present
 
 2. **Find latest version**
+
    ```bash
    pnpm view <package-name> version
    ```
@@ -76,15 +80,18 @@ Update versions following the project's strict versioning policy.
 ## Important Rules
 
 ### Runtime Tools (.mise.toml)
+
 - ✅ Always use exact versions (e.g., `25.8.1`)
 - ❌ Never use `latest`, `^`, `~`, `*`, or major-only versions
 
 ### Package Dependencies (package.json)
+
 - ✅ Exact versions (e.g., `1.2.3`) or range specifiers (e.g., `^1.2.3`, `~1.2.3`)
 - ❌ Never use `latest` or wildcard `*` alone
 - ✅ Recommend using `^` for most dependencies (allows patch and minor updates)
 
 ### General
+
 - ✅ Test after updating
 - ✅ Document breaking changes if any
 - ✅ Commit version updates separately from feature changes
@@ -92,6 +99,7 @@ Update versions following the project's strict versioning policy.
 ## Commit Message Format
 
 For runtime tools:
+
 ```
 chore(config): update node from X.Y.Z to A.B.C
 
@@ -101,6 +109,7 @@ Co-Authored-By: Claude Sonnet 4.5 (1M context) <noreply@anthropic.com>
 ```
 
 For packages:
+
 ```
 chore(deps): update <package-name> from ^X.Y.Z to ^A.B.C
 

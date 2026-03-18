@@ -13,8 +13,10 @@ Run the setup script to install all required tools and dependencies:
 ```
 
 This will install:
+
 - **mise** - Development tool version manager
 - **Node.js & pnpm** - Runtime and package manager (versions from `.mise.toml`)
+- **Vite+** - Unified toolchain for linting, formatting, testing, and building
 - **Aikido Safe Chain** - Supply chain protection against malicious packages
 - **Project dependencies** - All npm packages
 - **Git hooks** - Pre-commit hooks with lefthook
@@ -30,32 +32,66 @@ npm safe-chain-verify  # Should output "OK: Safe-chain works!"
 If you prefer to install components manually:
 
 1. **Install mise:**
+
    ```bash
    curl https://mise.run | sh
    ```
 
 2. **Install development tools:**
+
    ```bash
    mise install
    ```
 
-3. **Install Aikido Safe Chain:**
+3. **Install Vite+ (unified toolchain):**
+
+   ```bash
+   curl -fsSL https://vite.plus | bash
+   ```
+
+   Then restart your terminal or run `source ~/.zshrc` (or `~/.bashrc`)
+
+4. **Install Aikido Safe Chain:**
+
    ```bash
    npm install -g @aikidosec/safe-chain
    safe-chain setup
    ```
 
-4. **Install dependencies:**
+5. **Install dependencies:**
+
    ```bash
    pnpm install
    ```
 
-5. **Setup Git hooks:**
+6. **Setup Git hooks:**
    ```bash
    pnpm exec lefthook install
    ```
 
 ## Development
+
+### Using Vite+ Commands (Recommended)
+
+Vite+ provides a unified CLI (`vp`) for common development tasks:
+
+```bash
+# Unified check (format + lint + type-check)
+vp check
+
+# Run linter only
+vp lint
+
+# Format code
+vp fmt
+
+# Run tasks across monorepo
+vp run build
+vp run dev
+vp run type-check
+```
+
+### Using pnpm Scripts
 
 ```bash
 # Start development server
@@ -63,6 +99,9 @@ pnpm dev
 
 # Build for production
 pnpm build
+
+# Unified check (format + lint + type-check)
+pnpm check
 
 # Run linter
 pnpm lint

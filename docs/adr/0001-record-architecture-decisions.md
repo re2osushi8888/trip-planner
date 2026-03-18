@@ -19,6 +19,7 @@ Without documentation, this knowledge remains in chat logs, pull requests, or in
 We will use Architecture Decision Records (ADRs) as described by Michael Nygard in his article "Documenting Architecture Decisions".
 
 ADRs will be stored in `docs/adr/` and follow a lightweight format:
+
 - Sequential numbering (0001, 0002, etc.)
 - Descriptive filenames using kebab-case
 - Markdown format with standardized sections (Context, Decision, Consequences)
@@ -29,6 +30,7 @@ An interactive `/adr` command will be provided to help convert conversations int
 ## Consequences
 
 **Positive:**
+
 - Architectural decisions are documented with their rationale
 - New team members can understand why the codebase is structured as it is
 - Historical context is preserved and searchable
@@ -36,9 +38,11 @@ An interactive `/adr` command will be provided to help convert conversations int
 - The `/adr` command makes it easy to capture decisions during conversations
 
 **Negative:**
+
 - Requires discipline to document decisions as they are made
 - Adds a small amount of overhead to the decision-making process
 
 **Neutral:**
+
 - ADRs are immutable once accepted; if a decision changes, a new ADR supersedes the old one
 - Not every decision needs an ADR, only architecturally significant ones

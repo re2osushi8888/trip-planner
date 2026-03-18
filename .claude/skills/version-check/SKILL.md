@@ -11,11 +11,13 @@ This skill validates that all version specifications follow the project's strict
 ## What to Check
 
 ### 1. Check .mise.toml (Strict)
+
 - Read `.mise.toml`
 - Verify all tool versions use full semantic versions (e.g., `25.8.1`)
 - Flag any versions using major-only format (e.g., `25`) or `latest`
 
 ### 2. Check package.json Files (Lenient)
+
 - Find all `package.json` files in the project
 - Check `dependencies`, `devDependencies`, and `peerDependencies`
 - Only flag problematic patterns:
@@ -40,6 +42,7 @@ File: package.json
 ```
 
 If no violations found:
+
 ```
 ✅ All version specifications follow project guidelines
 ```

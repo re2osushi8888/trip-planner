@@ -14,6 +14,7 @@ At the project inception, we needed to establish a clear and consistent structur
 5. **Combine user perspective with situational context** in feature descriptions
 
 We needed to decide on:
+
 - The hierarchical structure (number of levels and their relationships)
 - The format and content of each level
 - How to organize technical implementation work
@@ -25,6 +26,7 @@ The initial discussion explored whether to use a two-level (Epic → Task) or th
 We adopt a **three-level hierarchy: Epic → Story → Task** for GitHub Issue management with the following characteristics:
 
 ### 1. Epic Level
+
 - Represents large bodies of work spanning multiple Stories
 - Typically takes multiple sprints to complete
 - Template: `1-epic.yml`
@@ -32,6 +34,7 @@ We adopt a **three-level hierarchy: Epic → Story → Task** for GitHub Issue m
 - Contains: Overview, Scope (in/out), Acceptance Criteria, Related Stories, Success Metrics
 
 ### 2. Story Level (Hybrid Format)
+
 - Represents specific user-facing features or capabilities
 - Completes within 1-2 sprints
 - Template: `2-story.yml`
@@ -42,6 +45,7 @@ We adopt a **three-level hierarchy: Epic → Story → Task** for GitHub Issue m
 - Contains: Both story formats, Acceptance Criteria, Definition of Done, Related Tasks
 
 ### 3. Task Level
+
 - Represents technical implementation work
 - Split by **scope** (technical area):
   - `api` - API endpoints, backend logic
@@ -57,6 +61,7 @@ We adopt a **three-level hierarchy: Epic → Story → Task** for GitHub Issue m
 - Labels: `task` + type (`feature`/`bug`/`kaizen`) + scope (manual)
 
 ### Template Naming Convention
+
 - File prefixes (1-, 2-, 3-) control display order in GitHub UI
 - Sequential numbering ensures consistent presentation
 

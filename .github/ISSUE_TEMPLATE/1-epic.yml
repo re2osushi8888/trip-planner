@@ -1,7 +1,7 @@
 name: Epic
 description: Create an Epic for large features that span multiple Stories and Tasks
-title: "[Epic] "
-labels: ["epic"]
+title: '[Epic] '
+labels: ['epic']
 body:
   - type: markdown
     attributes:

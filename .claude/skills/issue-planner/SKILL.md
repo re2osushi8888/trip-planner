@@ -41,16 +41,19 @@ When ready to start work on a Story, break it down into Tasks by technical scope
 ## Hierarchy Structure
 
 ### 1. Epic
+
 Large body of work that encompasses multiple Stories. Typically spans multiple sprints.
 
 **Template**: `1-epic.yml` → Label: `epic`
 
 ### 2. Story
+
 Specific feature or capability from the user's perspective. Combines Job Story (context/motivation) and User Story (role/benefit). Typically completed in 1-2 sprints.
 
 **Template**: `2-story.yml` → Label: `story`
 
 ### 3. Task
+
 Technical implementation work. Split by scope (api, web, domain, db, config, infra). Typically completed in hours to days.
 
 **Templates**: `3-task-feature.yml`, `3-task-bug.yml`, `3-task-kaizen.yml` → Labels: `task` + type
@@ -62,12 +65,14 @@ Technical implementation work. Split by scope (api, web, domain, db, config, inf
 ### What to Do in Each Phase
 
 **Phase 1: Initial Planning**
+
 1. Create Epic for large features
 2. Break down Epic into Stories (user-facing capabilities)
 3. Add Epic and Stories to GitHub Project
 4. **Stop** - Do not create Tasks yet
 
 **Phase 2: Development Start**
+
 1. Select a Story to implement
 2. Break down Story into Tasks (by technical scope)
 3. Manually add scope labels to each Task
@@ -78,10 +83,12 @@ Technical implementation work. Split by scope (api, web, domain, db, config, inf
 ## Available Tools
 
 ### Manual Creation
+
 - Use GitHub Issue templates: `.github/ISSUE_TEMPLATE/1-epic.yml`, `2-story.yml`, `3-task-*.yml`
 - Create issues one at a time via GitHub UI
 
 ### Bulk Creation Scripts
+
 - **Phase 1**: `create-epics.sh`, `create-stories.sh` - Build product roadmap
 - **Phase 2**: `create-tasks.sh` - Create Tasks when starting Story implementation
 

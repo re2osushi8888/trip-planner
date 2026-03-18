@@ -10,10 +10,11 @@ ls:
 ignore:
   - .claude
   - .github
-  - "**/node_modules"
-  - "**/dist"
+  - .vite-hooks
+  - '**/node_modules'
+  - '**/dist'
   - .git
-  - "**/.turbo"
+  - '**/.turbo'
   - pnpm-lock.yaml
   - package.json
   - tsconfig.json
@@ -26,5 +27,5 @@ ignore:
   - pnpm-workspace.yaml
   - .ls-lint.yml
   - .gitignore
-  - "**/README.md"
+  - '**/README.md'
   - CLAUDE.md

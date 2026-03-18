@@ -1,7 +1,7 @@
 name: User Idea
 description: Quick idea or suggestion (no strict format required)
-title: "[Idea] "
-labels: ["userIdea"]
+title: '[Idea] '
+labels: ['userIdea']
 body:
   - type: markdown
     attributes:

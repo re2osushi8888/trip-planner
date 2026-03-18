@@ -32,14 +32,17 @@ Create all required GitHub labels for the project:
 ```
 
 **Options:**
+
 - `--force`: Update existing labels with new colors/descriptions
 
 **What it does:**
+
 - Creates 14 labels: userIdea, epic, story, task, feature, bug, kaizen, api, web, domain, db, config, infra
 - Sets appropriate colors and descriptions
 - Skips labels that already exist (unless `--force` is used)
 
 **When to run:**
+
 - Initial project setup
 - After cloning the repository
 - When label definitions change
@@ -49,12 +52,14 @@ Create all required GitHub labels for the project:
 ### Creating Epics
 
 1. Create a JSON data file with your Epic data (see [JSON Data Format](#json-data-format) below):
+
    ```bash
    # Create your data file
    vim my-epics.json
    ```
 
 2. Run the script:
+
    ```bash
    ./create-epics.sh my-epics.json
    ```
@@ -68,12 +73,14 @@ Create all required GitHub labels for the project:
 ### Creating Stories
 
 1. Create a JSON data file with your Story data (see [JSON Data Format](#json-data-format) below):
+
    ```bash
    # Create your data file
    vim my-stories.json
    ```
 
 2. Run the script:
+
    ```bash
    ./create-stories.sh my-stories.json
    ```
@@ -88,12 +95,14 @@ Create all required GitHub labels for the project:
 ### Creating Tasks
 
 1. Create a JSON data file with your Task data (see [JSON Data Format](#json-data-format) below):
+
    ```bash
    # Create your data file
    vim my-tasks.json
    ```
 
 2. Run the script:
+
    ```bash
    ./create-tasks.sh my-tasks.json
    ```
@@ -115,6 +124,7 @@ Create all required GitHub labels for the project:
 ## JSON Data Format
 
 **Field definitions**: Refer to the issue templates for detailed field descriptions:
+
 - Epic fields: [`.github/ISSUE_TEMPLATE/1-epic.yml`](../../../.github/ISSUE_TEMPLATE/1-epic.yml)
 - Story fields: [`.github/ISSUE_TEMPLATE/2-story.yml`](../../../.github/ISSUE_TEMPLATE/2-story.yml)
 - Task fields: [`.github/ISSUE_TEMPLATE/3-task-*.yml`](../../../.github/ISSUE_TEMPLATE/)
@@ -181,6 +191,7 @@ Create all required GitHub labels for the project:
 ```
 
 **Note:**
+
 - Field meanings are defined in the Task issue templates (3-task-feature.yml, 3-task-bug.yml, 3-task-kaizen.yml)
 - The `type` field determines which template structure is used
 - The `scope` label must be added manually after creation (script will provide commands)
@@ -202,6 +213,7 @@ Set the GitHub Project status for issues:
 ```
 
 **Available statuses:**
+
 - `Backlog` - Backlog items
 - `Todo` - Ready to work on
 - `In progress` - Currently being worked on
@@ -209,6 +221,7 @@ Set the GitHub Project status for issues:
 - `Done` - Completed
 
 **Example:**
+
 ```bash
 # Set Epics to Backlog status
 ./set-project-status.sh Backlog 50 51 52 53 54
@@ -261,23 +274,27 @@ gh issue edit 62 --add-label db
 ## Troubleshooting
 
 **Error: "jq: command not found"**
+
 ```bash
 sudo apt-get update
 sudo apt-get install jq
 ```
 
 **Error: "gh: command not found"**
+
 ```bash
 # Install GitHub CLI
 # See: https://github.com/cli/cli#installation
 ```
 
 **Error: "failed to create issue"**
+
 - Check GitHub CLI authentication: `gh auth status`
 - Check repository permissions
 - Verify JSON syntax: `jq . my-data.json`
 
 **Rate limiting**
+
 - Script includes 1-second delay between issues
 - For large batches (>20 issues), consider increasing delay
 - GitHub API rate limit: 5000 requests/hour for authenticated users

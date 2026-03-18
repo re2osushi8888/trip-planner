@@ -28,6 +28,7 @@ The project needed a lightweight, version-controlled solution to manage Git hook
 We will adopt **lefthook** as the Git hooks manager for the trip-planner project.
 
 **Implementation:**
+
 - Use lefthook to manage all Git hooks (commit-msg, pre-commit, pre-push)
 - Configuration stored in `lefthook.yml` at repository root
 - Hooks automatically installed via `lefthook install` (run during `pnpm install` via prepare script)
@@ -35,6 +36,7 @@ We will adopt **lefthook** as the Git hooks manager for the trip-planner project
 - File-based filtering to run checks only on relevant files
 
 **Hook configuration:**
+
 ```yaml
 commit-msg:
   commands:
@@ -47,10 +49,10 @@ pre-commit:
       run: pnpm ls-lint
     type-check:
       run: pnpm type-check
-      glob: "*.{ts,tsx}"
+      glob: '*.{ts,tsx}'
     lint:
       run: pnpm eslint {staged_files}
-      glob: "*.{js,ts,jsx,tsx}"
+      glob: '*.{js,ts,jsx,tsx}'
 
 pre-push:
   commands:
@@ -73,6 +75,7 @@ pre-push:
 ## Consequences
 
 **Positive:**
+
 - Version-controlled hook configuration ensures consistency across all development environments
 - Automatic installation via `prepare` script eliminates manual setup for new developers
 - Parallel execution of independent checks significantly reduces hook execution time
@@ -84,6 +87,7 @@ pre-push:
 - Integrates seamlessly with existing tools (commitlint, ls-lint, ESLint, TypeScript)
 
 **Negative:**
+
 - Adds another tool to the project's dependency stack
 - Hook execution adds time to commit/push operations (though parallelization minimizes this)
 - Developers unfamiliar with lefthook need to learn its configuration format
@@ -91,6 +95,7 @@ pre-push:
 - Requires `lefthook install` to be run at least once (automated via prepare script, but could fail in some environments)
 
 **Neutral:**
+
 - Hooks can be bypassed with `--no-verify` flag, but this should be used sparingly and only in exceptional cases
 - Configuration must be maintained as project tooling evolves
 - Team must agree on which checks run at which hook stages (commit vs push)

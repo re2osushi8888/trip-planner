@@ -1,7 +1,7 @@
 name: Story
 description: Create a Story that combines context (Job Story) and user perspective (User Story)
-title: "[Story] "
-labels: ["story"]
+title: '[Story] '
+labels: ['story']
 body:
   - type: markdown
     attributes:
@@ -104,7 +104,7 @@ body:
     attributes:
       label: Parent Epic
       description: Link to the parent Epic
-      placeholder: "Part of Epic #123"
+      placeholder: 'Part of Epic #123'
     validations:
       required: false
 

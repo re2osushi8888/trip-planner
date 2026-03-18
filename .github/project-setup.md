@@ -12,6 +12,7 @@ This document describes how to set up GitHub Project views for the trip-planner 
 ## Existing Views
 
 The following views already exist:
+
 - Backlog (Board)
 - Priority board (Board)
 - Team items (Table)
@@ -34,21 +35,21 @@ The following views already exist:
 
 Click "New label" for each entry and configure as follows:
 
-| Label Name | Color | Description |
-|------------|-------|-------------|
-| `userIdea` | `#fbca04` | Quick ideas and suggestions (no strict format) |
-| `epic` | `#7057ff` | Large features or initiatives spanning multiple Stories |
-| `story` | `#0075ca` | User-facing features combining Job Story and User Story formats |
-| `task` | `#008672` | Technical implementation work |
-| `feature` | `#a2eeef` | New feature implementation tasks |
-| `bug` | `#d73a4a` | Bug fix tasks |
-| `kaizen` | `#fbca04` | Improvement tasks (continuous improvement) |
-| `api` | `#c5def5` | API endpoints and backend logic |
-| `web` | `#c5def5` | Frontend UI and user interface |
-| `domain` | `#c5def5` | Domain logic and business rules |
-| `db` | `#c5def5` | Database schema and migrations |
-| `config` | `#c5def5` | Configuration and environment setup |
-| `infra` | `#c5def5` | Infrastructure, deployment, and CI/CD |
+| Label Name | Color     | Description                                                     |
+| ---------- | --------- | --------------------------------------------------------------- |
+| `userIdea` | `#fbca04` | Quick ideas and suggestions (no strict format)                  |
+| `epic`     | `#7057ff` | Large features or initiatives spanning multiple Stories         |
+| `story`    | `#0075ca` | User-facing features combining Job Story and User Story formats |
+| `task`     | `#008672` | Technical implementation work                                   |
+| `feature`  | `#a2eeef` | New feature implementation tasks                                |
+| `bug`      | `#d73a4a` | Bug fix tasks                                                   |
+| `kaizen`   | `#fbca04` | Improvement tasks (continuous improvement)                      |
+| `api`      | `#c5def5` | API endpoints and backend logic                                 |
+| `web`      | `#c5def5` | Frontend UI and user interface                                  |
+| `domain`   | `#c5def5` | Domain logic and business rules                                 |
+| `db`       | `#c5def5` | Database schema and migrations                                  |
+| `config`   | `#c5def5` | Configuration and environment setup                             |
+| `infra`    | `#c5def5` | Infrastructure, deployment, and CI/CD                           |
 
 ### Label Creation Steps
 
@@ -65,6 +66,7 @@ For each label:
 ### Verification
 
 After creating all labels, verify:
+
 - ✅ All 14 labels exist
 - ✅ Hierarchy labels: `userIdea`, `epic`, `story`, `task`
 - ✅ Task type labels: `feature`, `bug`, `kaizen`
@@ -90,6 +92,7 @@ After creating all labels, verify:
 **Purpose**: Capture quick ideas and suggestions without strict formatting
 
 **Setup Steps**:
+
 1. Open the project: https://github.com/users/re2osushi8888/projects/2
 2. Click "**+ New view**" button
 3. Enter view name: `User Idea Board`
@@ -101,6 +104,7 @@ After creating all labels, verify:
    - Save
 
 **Status Columns** (recommended):
+
 - Ideas
 - Reviewing
 - Accepted (→ will be converted to Epic/Story)
@@ -115,6 +119,7 @@ After creating all labels, verify:
 **Purpose**: Track large features and initiatives
 
 **Setup Steps**:
+
 1. Open the project: https://github.com/users/re2osushi8888/projects/2
 2. Click "+ New view" button
 3. Enter view name: `Epic Board`
@@ -126,6 +131,7 @@ After creating all labels, verify:
    - Save
 
 **Status Columns** (recommended):
+
 - Backlog
 - In Progress
 - Done
@@ -137,6 +143,7 @@ After creating all labels, verify:
 **Purpose**: Track user-facing features and capabilities
 
 **Setup Steps**:
+
 1. Click "+ New view" button
 2. Enter view name: `Story Board`
 3. Select layout: **Board**
@@ -147,6 +154,7 @@ After creating all labels, verify:
    - Save
 
 **Status Columns** (recommended):
+
 - Todo
 - In Progress
 - Review
@@ -159,6 +167,7 @@ After creating all labels, verify:
 **Purpose**: Track technical implementation tasks (Feature, Bug, Kaizen)
 
 **Setup Steps**:
+
 1. Click "+ New view" button
 2. Enter view name: `Task Board`
 3. Select layout: **Board**
@@ -169,6 +178,7 @@ After creating all labels, verify:
    - Save
 
 **Status Columns** (recommended):
+
 - Todo
 - In Progress
 - Review
@@ -181,18 +191,22 @@ After creating all labels, verify:
 Create separate boards for each technical scope to track implementation by area.
 
 #### API Board
+
 - Filter: `label:task label:api`
 - Track all API-related tasks
 
 #### Web Board
+
 - Filter: `label:task label:web`
 - Track all Web UI tasks
 
 #### Domain Board
+
 - Filter: `label:task label:domain`
 - Track all Domain logic tasks
 
 #### Database Board
+
 - Filter: `label:task label:db`
 - Track all Database tasks
 
@@ -203,14 +217,17 @@ Create separate boards for each technical scope to track implementation by area.
 Track tasks by type across all scopes.
 
 #### Feature Board
+
 - Filter: `label:feature`
 - Track all feature implementation tasks
 
 #### Bug Board
+
 - Filter: `label:bug`
 - Track all bug fix tasks
 
 #### Kaizen Board
+
 - Filter: `label:kaizen`
 - Track all improvement tasks
 
@@ -221,6 +238,7 @@ Track tasks by type across all scopes.
 **Note**: Burndown charts are available in the **Insights** tab (beta feature).
 
 **Setup Steps**:
+
 1. Open the project
 2. Click the "Insights" tab
 3. Click "New chart"
@@ -237,17 +255,20 @@ Track tasks by type across all scopes.
 The project uses a hierarchical label system based on Epic → Story → Task structure.
 
 ### Hierarchy Labels (automatically set by issue templates)
+
 - `userIdea` - Quick ideas and suggestions (no strict format)
 - `epic` - Large features or initiatives spanning multiple Stories
 - `story` - User-facing features combining Job Story and User Story formats
 - `task` - Technical implementation work
 
 ### Task Type Labels (automatically set by task templates)
+
 - `feature` - New feature implementation tasks
 - `bug` - Bug fix tasks
 - `kaizen` - Improvement tasks
 
 ### Scope Labels (manually added to Tasks)
+
 - `api` - API endpoints and backend logic
 - `web` - Frontend UI and user interface
 - `domain` - Domain logic and business rules
@@ -258,6 +279,7 @@ The project uses a hierarchical label system based on Epic → Story → Task st
 ### Label Combinations
 
 Examples of how labels combine:
+
 - User Idea: `userIdea`
 - Epic: `epic`
 - Story: `story`
@@ -270,6 +292,7 @@ Examples of how labels combine:
 ## Tips
 
 ### View Management
+
 - Use **Filters** to create focused views by combining labels:
   - `label:task label:api` - All API tasks
   - `label:feature label:web` - All Web feature tasks
@@ -279,6 +302,7 @@ Examples of how labels combine:
 - Pin frequently used views for quick access
 
 ### Workflow Best Practices
+
 - **User Idea Board**: Collect and review unstructured ideas before formalizing them
 - **Epic Board**: Track overall progress of major features
 - **Story Board**: Manage user-facing capabilities ready for sprint planning
@@ -286,6 +310,7 @@ Examples of how labels combine:
 - **Scope Boards**: Enable parallel development across technical areas (api, web, domain, etc.)
 
 ### Idea to Implementation Flow
+
 1. **Capture**: Create User Idea issue (quick, unstructured)
 2. **Review**: Discuss and evaluate in User Idea Board
 3. **Formalize**: If accepted, create Epic or Story from the idea
@@ -293,6 +318,7 @@ Examples of how labels combine:
 5. **Implement**: Follow normal Epic → Story → Task workflow
 
 ### Hierarchy Navigation
+
 - Use issue linking to connect Epic → Story → Task
 - Reference parent issues in descriptions: "Part of Epic #123", "Part of Story #456"
 - GitHub Projects automatically shows relationships through linked issues

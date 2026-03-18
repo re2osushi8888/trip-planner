@@ -26,6 +26,7 @@ The project needed a lightweight, developer-friendly solution to standardize dev
 We will adopt **mise** (formerly rtx) for development tool version management.
 
 **Implementation:**
+
 - Configuration stored in `.mise.toml` at repository root
 - Explicit version specification for all runtime tools:
   ```toml
@@ -38,6 +39,7 @@ We will adopt **mise** (formerly rtx) for development tool version management.
 - CI/CD environments use the same `.mise.toml` for consistency
 
 **Version specification policy:**
+
 - ✅ Always use exact semantic versions (e.g., `25.8.1`, not `25` or `latest`)
 - ❌ Never use range specifiers or `latest` keyword
 - Rationale: Ensures absolute reproducibility and makes version upgrades explicit in git history
@@ -75,6 +77,7 @@ While **Nix** was seriously considered for its superior reproducibility and decl
 ## Consequences
 
 **Positive:**
+
 - **Guaranteed version consistency**: `.mise.toml` ensures all developers and CI/CD use identical tool versions
 - **Simple onboarding**: New developers run `mise install` once and have the correct environment automatically
 - **Version control**: Tool versions are tracked in git, making changes explicit and auditable
@@ -86,6 +89,7 @@ While **Nix** was seriously considered for its superior reproducibility and decl
 - **CI/CD alignment**: Same `.mise.toml` used in local development and CI pipelines eliminates environment drift
 
 **Negative:**
+
 - **mise installation required**: Developers must install mise itself before starting (one-time setup)
 - **Less reproducibility than Nix**: mise manages tool versions but not system dependencies (libraries, compilers, etc.)
   - Acceptable trade-off for this project's needs
@@ -97,6 +101,7 @@ While **Nix** was seriously considered for its superior reproducibility and decl
 - **Manual version updates**: Developers must manually update `.mise.toml` when upgrading tools (though this is intentional for explicit version control)
 
 **Neutral:**
+
 - **Nix trade-off accepted**: We consciously choose simplicity over maximum reproducibility
   - mise provides sufficient reproducibility for typical JavaScript/TypeScript development
   - If future requirements demand Nix-level guarantees (e.g., embedded systems, cryptographic verification), we can migrate
@@ -106,6 +111,7 @@ While **Nix** was seriously considered for its superior reproducibility and decl
 - **Version policy discipline**: Team must follow exact version specification policy (enforced via `/version-check` and CLAUDE.md)
 
 **Future considerations:**
+
 - Monitor Nix ecosystem developments; reconsider if Nix adoption becomes significantly easier
 - Evaluate migration to Nix if reproducibility requirements increase (e.g., compliance, security audits)
 - Consider hybrid approach (mise for development, Nix for production deployment) if needed

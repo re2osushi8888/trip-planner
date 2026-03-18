@@ -30,11 +30,13 @@ This guide explains how to use shell scripts to create multiple Epics, Stories, 
 Install the following tools:
 
 - **`jq`**: JSON processor
+
   ```bash
   sudo apt-get install jq
   ```
 
 - **`gh`**: GitHub CLI (must be authenticated)
+
   ```bash
   # Install gh (if not already installed)
   # See: https://cli.github.com/
@@ -55,6 +57,7 @@ cd .claude/skills/issue-planner/scripts
 ```
 
 **What it creates**:
+
 - **Hierarchy labels**: `userIdea`, `epic`, `story`, `task`
 - **Type labels**: `feature`, `bug`, `kaizen`
 - **Scope labels**: `api`, `web`, `domain`, `db`, `config`, `infra`
@@ -62,6 +65,7 @@ cd .claude/skills/issue-planner/scripts
 Total: **14 labels**
 
 **Update existing labels**:
+
 ```bash
 ./create-labels.sh --force
 ```
@@ -124,6 +128,7 @@ cd .claude/skills/issue-planner
 ```
 
 **Output**:
+
 ```
 Created Epic #101: [Epic] User Authentication System
 Created Epic #102: [Epic] Payment Processing
@@ -183,6 +188,7 @@ cd .claude/skills/issue-planner
 ```
 
 **Output**:
+
 ```
 Created Story #103: [Story] OAuth2 Login with Google (Part of Epic #101)
 Created Story #104: [Story] Password Reset Flow (Part of Epic #101)
@@ -254,6 +260,7 @@ cd .claude/skills/issue-planner
 ```
 
 **Output**:
+
 ```
 Created Feature Task #105: [Feature] Implement Google OAuth2 API integration (Part of Story #103)
 Created Feature Task #106: [Feature] Create Google login UI component (Part of Story #103)
@@ -302,10 +309,12 @@ gh issue edit 107 --add-label db
 ### Relationships
 
 Scripts automatically add parent-child relationships when you specify:
+
 - `parent_epic` (in Stories JSON) → Links Story to Epic
 - `parent_story` (in Tasks JSON) → Links Task to Story
 
 GitHub will display these relationships in:
+
 - Issue sidebar (under "Development")
 - Issue timeline
 - GitHub Projects (as hierarchical views)
@@ -313,6 +322,7 @@ GitHub will display these relationships in:
 ### Scope Labels for Tasks
 
 After creating Tasks with `create-tasks.sh`, you **must manually add scope labels**:
+
 - `api`, `web`, `domain`, `db`, `config`, `infra`
 
 The script will output the exact `gh issue edit` commands needed. Copy and run them.
@@ -322,6 +332,7 @@ The script will output the exact `gh issue edit` commands needed. Copy and run t
 ### Field Definitions
 
 Always refer to `.github/ISSUE_TEMPLATE/*.yml` files for authoritative field descriptions and examples:
+
 - `1-epic.yml` - Epic template
 - `2-story.yml` - Story template
 - `3-task-feature.yml` - Feature Task template
