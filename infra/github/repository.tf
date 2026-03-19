@@ -12,9 +12,9 @@ resource "github_repository" "main" {
   has_projects    = true
   has_wiki        = false
 
-  allow_merge_commit     = true
-  allow_squash_merge     = true
-  allow_rebase_merge     = true
+  allow_merge_commit     = false # Disable to keep history clean
+  allow_squash_merge     = true  # Squash merge only (1 PR = 1 commit)
+  allow_rebase_merge     = false # Disable to keep history clean
   allow_auto_merge       = true
   delete_branch_on_merge = true
 
@@ -34,20 +34,21 @@ resource "github_branch_protection" "main" {
     contexts = []   # TODO: Add status check contexts from GitHub Actions
   }
 
-  # Require code review (ADR-0018: Code review and approval required)
+  # Require code review (ADR-0019: Approval not required for single-developer team)
   required_pull_request_reviews {
     dismiss_stale_reviews           = true # Invalidate old reviews on new commits
     require_code_owner_reviews      = false
-    required_approving_review_count = 1 # At least 1 approval required
+    required_approving_review_count = 0 # No approval required (single-developer)
     require_last_push_approval      = false
   }
 
   # Additional protections for trunk stability
-  require_conversation_resolution = true  # Resolve all discussions before merging
+  require_conversation_resolution = false # Not required for single-developer team
+  require_signed_commits          = false # Not required for single-developer team
   required_linear_history         = false # Allow merge commits (set true for linear history)
   allows_force_pushes             = false
   allows_deletions                = false
 
-  # Admins can bypass protection for emergency fixes
+  # Allow admin bypass for flexibility (single-developer team)
   enforce_admins = false
 }

@@ -28,6 +28,7 @@ ADRs document important architectural decisions made during the project, includi
 | [0016](0016-adopt-vitest-for-testing.md)                             | Adopt Vitest for Unit and Integration Testing                  | Accepted                | 2026-03-18 |
 | [0017](0017-adopt-hono-for-backend-framework.md)                     | Adopt Hono for Backend Framework                               | Accepted                | 2026-03-18 |
 | [0018](0018-adopt-trunk-based-development.md)                        | Adopt Trunk-Based Development                                  | Accepted                | 2026-03-18 |
+| [0019](0019-github-repository-security-settings.md)                  | GitHub Repository Security Settings                            | Accepted                | 2026-03-19 |
 
 ## ADR Lifecycle
 
