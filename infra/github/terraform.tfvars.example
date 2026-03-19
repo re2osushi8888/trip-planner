@@ -1,0 +1,5 @@
+# Copy this file to terraform.tfvars and fill in your values
+# terraform.tfvars is gitignored for security
+
+github_owner      = "re2osushi8888"
+repository_name   = "trip-planner"
