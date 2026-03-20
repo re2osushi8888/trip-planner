@@ -1,6 +1,14 @@
 pre-commit:
   parallel: true
   commands:
+    # Branch name validation
+    branch-name:
+      run: |
+        branch=$(git symbolic-ref --short HEAD)
+        echo "$branch" | grep -qE '^(feat|fix)/.+$' || \
+          (echo "Branch name '$branch' must match feat/<desc> or fix/<desc>" && exit 1)
+      fail_text: 'Branch name does not follow the convention. Use feat/<desc> or fix/<desc>.'
+
     # Type checking - must run on entire project for consistency
     type-check:
       glob: '*.{ts,tsx}'
