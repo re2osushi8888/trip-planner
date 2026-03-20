@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.15.0",
-    "hono": "^4.7.10"
+    "hono": "^4.12.8"
   },
   "devDependencies": {
     "@trip-planner/tsconfig": "workspace:*",
@@ -21,6 +21,6 @@
     "@typescript/native-preview": "7.0.0-dev.20260312.1",
     "tsx": "^4.20.0",
     "typescript": "^5.8.0",
-    "vite-plus": "^0.1.12"
+    "vite-plus": "^0.1.13"
   }
 }
