@@ -26,23 +26,17 @@ Show the issue title and labels to the user to confirm it is the correct one.
 
 ### Step 2: Suggest Branch Prefix
 
-Based on the issue labels and title, suggest a branch prefix from the list below. **Present all options and recommend one.**
+Based on the issue labels and title, suggest a branch prefix from the list below. **Present both options and recommend one.**
 
-| Prefix     | When to use                                |
-| ---------- | ------------------------------------------ |
-| `feat`     | New feature or capability                  |
-| `fix`      | Bug fix                                    |
-| `chore`    | Maintenance, tooling, dependency updates   |
-| `docs`     | Documentation only                         |
-| `refactor` | Code restructuring without behavior change |
+| Prefix | When to use                        |
+| ------ | ---------------------------------- |
+| `feat` | New feature, enhancement, or story |
+| `fix`  | Bug fix                            |
 
 **How to recommend:**
 
 - Label `bug` → recommend `fix`
-- Labels `enhancement`, `story`, `epic` → recommend `feat`
-- Labels `deps`, `config`, `ci` → recommend `chore`
-- Label `documentation` → recommend `docs`
-- No clear label → ask the user to choose
+- All other labels (`enhancement`, `story`, `epic`, `chore`, `docs`, etc.) → recommend `feat`
 
 Present the options using `AskUserQuestion` with the recommended option listed first and marked "(Recommended)".
 

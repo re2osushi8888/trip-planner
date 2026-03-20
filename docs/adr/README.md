@@ -29,6 +29,7 @@ ADRs document important architectural decisions made during the project, includi
 | [0017](0017-adopt-hono-for-backend-framework.md)                     | Adopt Hono for Backend Framework                               | Accepted                | 2026-03-18 |
 | [0018](0018-adopt-trunk-based-development.md)                        | Adopt Trunk-Based Development                                  | Accepted                | 2026-03-18 |
 | [0019](0019-github-repository-security-settings.md)                  | GitHub Repository Security Settings                            | Accepted                | 2026-03-19 |
+| [0020](0020-adopt-conventional-branch-naming.md)                     | Adopt Conventional Branch Naming with feat/ and fix/ Prefixes  | Accepted                | 2026-03-20 |
 
 ## ADR Lifecycle
 
