@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true, // Enable access from Windows host
-    port: 5173,
+    port: Number(process.env['VITE_PORT']) || 4000,
   },
 });
