@@ -19,6 +19,16 @@ resource "github_repository" "main" {
   delete_branch_on_merge = true
 
   vulnerability_alerts = true
+
+  # Security features (free for public repositories)
+  security_and_analysis {
+    secret_scanning {
+      status = "enabled"
+    }
+    secret_scanning_push_protection {
+      status = "enabled"
+    }
+  }
 }
 
 # Branch protection for main branch (Trunk-Based Development)
@@ -44,8 +54,8 @@ resource "github_branch_protection" "main" {
 
   # Additional protections for trunk stability
   require_conversation_resolution = false # Not required for single-developer team
-  require_signed_commits          = false # Not required for single-developer team
-  required_linear_history         = false # Allow merge commits (set true for linear history)
+  require_signed_commits          = false # Not using GPG signing
+  required_linear_history         = true  # Enforce linear history (clean git log)
   allows_force_pushes             = false
   allows_deletions                = false
 
