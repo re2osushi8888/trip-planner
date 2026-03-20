@@ -18,7 +18,7 @@
   "devDependencies": {
     "@trip-planner/tsconfig": "workspace:*",
     "@types/node": "^25.5.0",
-    "@typescript/native-preview": "7.0.0-dev.20260312.1",
+    "@typescript/native-preview": "7.0.0-dev.20260320.1",
     "tsx": "^4.20.0",
     "typescript": "^5.8.0",
     "vite-plus": "^0.1.13"
