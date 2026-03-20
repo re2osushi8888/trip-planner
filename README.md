@@ -71,6 +71,22 @@ If you prefer to install components manually:
 
 ## Development
 
+### Development Ports
+
+The project uses standardized ports to avoid conflicts with other development tools:
+
+- **Frontend (React/Vite)**: `http://localhost:4000`
+- **Backend API (Hono)**: `http://localhost:4001`
+
+These ports can be customized via environment variables in `.env`:
+
+```bash
+# Copy example file and customize if needed
+cp .env.example .env
+```
+
+See [ADR-0019: Standardize Local Development Ports](docs/adr/0019-standardize-local-development-ports.md) for the rationale behind this port allocation strategy.
+
 ### Using Vite+ Commands (Recommended)
 
 Vite+ provides a unified CLI (`vp`) for common development tasks:

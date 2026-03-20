@@ -8,7 +8,7 @@ app.get('/', (c) => {
   return c.text('Hello World');
 });
 
-const port = 3000;
+const port = Number(process.env['API_PORT']) || 4001;
 console.log(`Server is running on http://localhost:${port}`);
 
 serve({
