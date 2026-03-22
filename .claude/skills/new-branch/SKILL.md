@@ -14,9 +14,7 @@ This skill guides you through creating a new branch linked to a GitHub Issue.
 2. **Suggest Branch Prefix** — Present `feat` / `fix` and recommend one. See [prefix guide](references/prefix-guide.md).
 3. **Determine Branch Name** — Use `<prefix>/<issue-number>-<short-description>` (2–5 kebab-case words from the title). Confirm with the user.
 4. **Fetch Latest Main** — Run `git fetch && git checkout main && git pull origin main`.
-5. **Create Branch** — Run `git checkout -b <branch-name>`.
-6. **Push Immediately** — Run `git push -u origin <branch-name>`.
-7. **Link to Issue** — Run `gh issue develop <issue-number> --name <branch-name>`.
+5. **Create Branch & Link to Issue** — Run `gh issue develop <issue-number> -b main -n <branch-name> -c`. This creates the branch on GitHub (automatically linked to the issue) and checks it out locally.
 
 After all steps, show the [summary output](references/summary-output.md).
 
