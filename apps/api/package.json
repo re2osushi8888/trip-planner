@@ -12,7 +12,7 @@
     "test:watch": "vp test --watch"
   },
   "dependencies": {
-    "@hono/node-server": "^1.15.0",
+    "@hono/node-server": "^1.19.13",
     "hono": "^4.12.8"
   },
   "devDependencies": {
