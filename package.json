@@ -20,14 +20,14 @@
     "commit": "git-cz"
   },
   "devDependencies": {
-    "@commitlint/cli": "20.5.0",
+    "@commitlint/cli": "20.5.2",
     "@commitlint/config-conventional": "20.5.0",
-    "@commitlint/cz-commitlint": "20.5.0",
+    "@commitlint/cz-commitlint": "20.5.2",
     "@ls-lint/ls-lint": "2.3.1",
     "codex": "^0.2.3",
     "commitizen": "4.3.1",
     "inquirer": "9.3.8",
-    "lefthook": "2.1.4",
+    "lefthook": "2.1.6",
     "oxc": "1.0.1",
     "vite-plus": "catalog:"
   },
