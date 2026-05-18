@@ -27,7 +27,7 @@
     "codex": "^0.2.3",
     "commitizen": "4.3.1",
     "inquirer": "9.3.8",
-    "lefthook": "2.1.4",
+    "lefthook": "2.1.6",
     "oxc": "1.0.1",
     "vite-plus": "catalog:"
   },
