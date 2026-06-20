@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.15.0",
-    "hono": "^4.12.8"
+    "hono": "^4.12.25"
   },
   "devDependencies": {
     "@trip-planner/tsconfig": "workspace:*",
